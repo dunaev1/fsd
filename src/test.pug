@@ -1,0 +1,21 @@
+include ./components/textbox/textbox
+include ./components/dropdown/guests
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Пример страницы
+    link(rel="stylesheet" type="text/css" href="main.css")
+    
+  body
+    script(src="main.bundle.js")
+    //.wrapper
+    +textbox({title: "Fuck", placeholder: "Email:"})
+    +textbox({title: "shit", text: "Sluts"})
+    +guests({values: [1,2,3]})
+    +textbox
+
+
+
+

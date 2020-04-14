@@ -1,0 +1,32 @@
+@import "./common/colors.css";
+@import "./components/textbox/textbox.css";
+@import "./components/dropdown/dropdown.css";
+
+body {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #999;
+  -webkit-font-smoothing: antialiased;
+  outline: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  /*line-height: 15px;*/
+  /* identical to box height */
+
+  text-transform: uppercase;
+}
+
+[hidden] {
+  display: none;
+}
+
