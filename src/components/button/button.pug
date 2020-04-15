@@ -1,0 +1,26 @@
+//-
+  options.type      {"text", "bordered", "filled", "pay"}
+  options.text
+  options.url       
+
+include ./button-arrow
+
+mixin button(options)
+  -
+    var type = "text", text = "Ok", url = "/urls/empty"
+    if(typeof(options) != undefined) {
+      typeof(options.type) != "undefined" && (type = options.type)
+      typeof(options.text) != "undefined" && (text = options.text)
+      typeof(options.url) != "undefined" && (url = options.url);
+    }
+  case type
+    when "bordered"
+      a.button-bordered(href= url)= text
+    when "filled" 
+      a.button-filled(href= url)= text
+    when "pay"
+      .button-filled
+        .button-text= text
+        +button-arrow
+    default
+      a.button(href= url)= text

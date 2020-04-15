@@ -1,0 +1,52 @@
+@import '../../common/fonts.scss';
+
+@mixin button-common {
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.button {
+  @include font-h3;
+  @include button-common;
+  color: var(--c_purple);
+
+  background: #fff;
+
+  &:hover, &:focus {
+    color: var(--c_dark50);
+  }
+}
+
+.button-bordered {
+  @include font-h3;
+  @include button-common;
+
+  color: var(--c_purple);
+  
+  background: #fff;
+  border: 2px solid var(--c_purple);
+
+  border-radius: 22px;
+  
+  &:hover, &:focus {
+    opacity: 0.5;
+  }
+}
+
+.button-filled {
+  @include font-h3;
+  @include button-common;
+  color: #fff;
+  
+  background: linear-gradient(180deg, var(--c_purple) 0, var(--c_purple_grad) 100%);
+  border-radius: 22px;
+  
+  &:hover, &:focus {
+    opacity: 0.5;
+  }
+}

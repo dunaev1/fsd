@@ -1,5 +1,7 @@
 include ./components/textbox/textbox
 include ./components/dropdown/guests
+include ./components/button/button
+
 
 doctype html
 html(lang="en")
@@ -15,6 +17,9 @@ html(lang="en")
     +textbox({title: "shit", text: "Sluts"})
     +guests({values: [1,2,3]})
     +textbox
+    +button({text: "fuck"})
+    +button({text: "fuck", type: "bordered"})
+    +button({text: "fuck", type: "filled"})
 
 
 

@@ -5,7 +5,7 @@
     options.values        ([$rooms, $beds, $baths] or [$adult, $kids, $babies])
 
 include ./ico_drop
-
+include ../button/button
 
 mixin guests(options)
   -
@@ -31,6 +31,10 @@ mixin guests(options)
         +_row({text: "Взрослые", val: v[0]})
         +_row({text: "Дети", val: v[1]})
         +_row({text: "Младенцы", val: v[2]})
+        .footer-row
+          +button({text: "Очистить"})
+          .spacer
+          +button({text: "Применить"})
 
 
 //-
@@ -39,7 +43,7 @@ mixin guests(options)
 mixin _row(opt)
   .dd-row
     .dd-txt= opt.text
-    .dd-row-mns -
+    .dd-row-mns(tabindex="0") -
     .dd-row-num= opt.val
-    .dd-row-pls +
+    .dd-row-pls(tabindex="0") +
 

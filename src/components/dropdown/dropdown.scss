@@ -46,6 +46,8 @@
 .guest-content {
   border: 1px solid var(--c_dark25);
   border-top: 0;
+  border-radius: 0 0 4px 4px;
+
   z-index: 1;
   position: absolute;
   background: #fff;
@@ -89,13 +91,18 @@
 .dd-row-mns, .dd-row-pls {
   width: 30px;
   height: 30px;
-  border: 1px solid var(--c_dark25);
-  border-radius: 14px;
+  border: 1px solid var(--c_dark50);
+  border-radius: 22px;
   flex-grow: 0;
   display: flex;
   align-items: center; 
   justify-content: center;
-  
+  color: var(--c_dark50);
+  outline: none;
+}
+
+.dd-row-mns:focus, .dd-row-pls:focus {
+  border-color: var(--c_dark75);
 }
 
 .dd-row-num {
@@ -108,3 +115,14 @@
   justify-content: center;
 }
 
+.footer-row {
+  display: flex;
+  padding: 15px 7px 7px 15px;
+
+  .spacer {
+    flex-grow: 1;
+  }
+  .button {
+    flex-grow: 0;
+  }
+}

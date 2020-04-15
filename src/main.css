@@ -1,6 +1,3 @@
-@import "./common/colors.css";
-@import "./components/textbox/textbox.css";
-@import "./components/dropdown/dropdown.css";
 
 body {
   font-family: 'Source Sans Pro', Arial, sans-serif;
