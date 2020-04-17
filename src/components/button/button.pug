@@ -1,9 +1,9 @@
 //-
-  options.type      {"text", "bordered", "filled", "pay"}
+  options.type      {"text", "text-default", "bordered", "filled", "pay"}
   options.text
   options.url       
 
-include ./button-arrow
+include ./ico_arrow
 
 mixin button(options)
   -
@@ -19,8 +19,11 @@ mixin button(options)
     when "filled" 
       a.button-filled(href= url)= text
     when "pay"
-      .button-filled
+      a.button-filled(href= url)
         .button-text= text
-        +button-arrow
-    default
+        .spacer
+        +ico_arrow
+    when "text"
       a.button(href= url)= text
+    default
+      a.button-default(href= url)= text

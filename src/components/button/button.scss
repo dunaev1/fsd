@@ -8,18 +8,23 @@
   align-items: center;
   justify-content: center;
 
+  &:hover, &:focus {
+    opacity: 0.5;
+  }
 }
 
 .button {
   @include font-h3;
   @include button-common;
-  color: var(--c_purple);
-
+  color: var(--c_dark50);
   background: #fff;
+}
 
-  &:hover, &:focus {
-    color: var(--c_dark50);
-  }
+.button-default {
+  @include font-h3;
+  @include button-common;
+  color: var(--c_purple);
+  background: #fff;
 }
 
 .button-bordered {
@@ -33,20 +38,24 @@
 
   border-radius: 22px;
   
-  &:hover, &:focus {
-    opacity: 0.5;
-  }
 }
 
 .button-filled {
+  display: flex;
   @include font-h3;
   @include button-common;
   color: #fff;
   
   background: linear-gradient(180deg, var(--c_purple) 0, var(--c_purple_grad) 100%);
   border-radius: 22px;
-  
-  &:hover, &:focus {
-    opacity: 0.5;
+ 
+  .button-text {
+    position: absolute;
+  }
+  .spacer {
+    flex-grow: 1;
+  }
+  .pic {
+    flex-grow: 0;
   }
 }

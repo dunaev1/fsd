@@ -1,0 +1,16 @@
+//-
+  options.text
+  options.cheched
+
+mixin checkbox(options)
+  -
+    var text, checked = false
+    if (typeof(options) != "undefined") {
+      typeof(options.text) != "undefined" && (text = options.text)
+      typeof(options.checked) != "undefined" && (checked = options.checked)
+    }
+
+  label.checkbox= text
+    input(type="checkbox")
+    .checkmark
+    
