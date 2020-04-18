@@ -1,0 +1,20 @@
+//-
+  options.name    radiogroup name
+  options.labels  []
+  options.isel    int
+
+mixin radiogroup(options)
+  -
+    var name = "radio", labels = [], isel = 0
+    if (typeof(options) != "undefined") {
+      typeof(options.labels) != "undefined" && (labels = options.labels)
+      typeof(options.isel) != "undefined" && (isel = options.isel)
+      typeof(options.name) != "undefined" && (name = options.name)
+    }
+
+  .radiogroup
+    each val, i in labels
+      label.radiobutton
+        input(type="radio" name= name checked= isel==i)
+        .text= val
+        .checkmark

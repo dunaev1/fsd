@@ -1,0 +1,15 @@
+//-
+  options.text
+  options.on
+
+mixin toggle(options)
+  -
+    var text, on = false;
+    if (typeof(options) != "undefined") {
+      typeof(options.text) != "undefined" && (text = options.text)
+      typeof(options.on) != "undefined" && (on = options.on)
+    }
+
+  label.toggle= text
+    input(type="checkbox" checked= on)
+    .checkmark

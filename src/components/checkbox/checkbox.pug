@@ -1,16 +1,28 @@
 //-
-  options.text
-  options.cheched
+  options.text    (\n supports)
+  options.checked
+  options.isrich
 
 mixin checkbox(options)
   -
-    var text, checked = false
+    var texts= [""], checked = false, isrich = false
     if (typeof(options) != "undefined") {
-      typeof(options.text) != "undefined" && (text = options.text)
+      typeof(options.text) != "undefined" && (texts = options.text.split("\n"))
       typeof(options.checked) != "undefined" && (checked = options.checked)
+      typeof(options.isrich) != "undefined" && (isrich = options.isrich)
     }
 
-  label.checkbox= text
-    input(type="checkbox")
+  label.checkbox
+    .textwrapper
+      if isrich
+        each val, i in texts
+          if i == 0
+            .richtext= texts[i]
+          else
+            .richtext-desc= texts[i]
+      else
+        each val, i in texts
+          .text= texts[i]
+    input(type="checkbox" checked= checked)
     .checkmark
     

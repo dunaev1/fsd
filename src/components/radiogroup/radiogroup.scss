@@ -1,0 +1,63 @@
+@import "../../common/fonts.scss";
+
+.radiogroup {
+  display: flex;
+
+  .radiobutton {
+    position: relative;
+    @include font-body();
+    color: var(--c_dark50);
+
+    padding-left: 30px;
+    padding-right: 20px;
+    
+
+    input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--c_dark50);
+      border-radius: 20px;
+    }
+    input:checked ~ .checkmark {
+      border-color: var(--c_purple);
+    }
+    
+    input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    &:hover, input:focus ~ .checkmark {
+      opacity: 0.5;
+    }
+    
+    input:checked ~ .text {
+      color: var(--c_dark75);
+    }
+
+    .checkmark:after {
+      display: none;
+      position: absolute;
+      content: "";
+      box-sizing: border-box;
+      
+      left: 3px;
+      top: 3px;
+      width: 12px;
+      height: 12px;
+      
+      border-width: 0px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, var(--c_purple) 0%, var(--c_purple_grad) 100%);
+    }
+  }
+}

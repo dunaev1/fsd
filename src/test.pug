@@ -2,6 +2,8 @@ include ./components/textbox/textbox
 include ./components/dropdown/guests
 include ./components/button/button
 include ./components/checkbox/checkbox
+include ./components/radiogroup/radiogroup
+include ./components/toggle/toggle
 
 doctype html
 html(lang="en")
@@ -21,7 +23,9 @@ html(lang="en")
     +button({text: "fuck", type: "bordered"})
     +button({text: "fuck", type: "filled"})
     +button({text: "fuck", type: "pay"})
-    +checkbox({text: "sluts", checked: true})
-
-
-
+    +checkbox({text: "Можно пригласить гостей (до 10 человек)", checked: true})
+    +checkbox({text: "Можно пригласить гостей \n(до 10 человек)", checked: true})
+    +checkbox({text: "Можно пригласить гостей \n(до 10 человек)", isrich: true, checked: false})
+    +radiogroup({name: "radio1", labels: ["Мужчина", "Женщина"], isel: 0})
+    +toggle({text: "fuck fuck"})
+  
