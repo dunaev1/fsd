@@ -1,0 +1,39 @@
+//-
+  static
+
+mixin pagination()
+  .pagination
+    .pagebar
+      +_button({value: 1, pageon: true})
+      +_button({value: 2})
+      +_button({value: 3})
+      +_button({value: "..."})
+      +_button({value: 15})
+      +_button({type: "arrow"})
+    .desc= "1 − 12 из 100+ вариантов аренды"
+
+//-
+  opt.text     int or ...
+  opt.type     {"text", "arrow"}
+  opt.pageon   bool
+
+include ./ico_arrow
+
+mixin _button(opt)
+  -
+    var type = "text", pageon = false, value = 0
+    if (typeof(opt) != "undefined") {
+      typeof(opt.type) != "undefined" && ( type = opt.type)
+      typeof(opt.pageon) != "undefined" && ( pageon = opt.pageon)
+      typeof(opt.value) != "undefined" && ( value = opt.value)
+    }
+  case type
+    when "arrow"
+      a.arrow(href= "/urls/empty")
+        +ico_arrow
+    default
+      if pageon
+        .pageon= value
+      else
+        a.button(href= "/urls/empty")= value
+

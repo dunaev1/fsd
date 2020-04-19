@@ -9,4 +9,7 @@ import "./components/button/button.scss";
 import "./components/checkbox/checkbox.scss"
 import "./components/radiogroup/radiogroup.scss"
 import "./components/toggle/toggle.scss"
+import "./components/likebutton/likebutton.scss"
+import "./components/ratebutton/ratebutton.scss"
+import "./components/pagination/pagination.scss"
 import './main.css'

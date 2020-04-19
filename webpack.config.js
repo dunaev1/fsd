@@ -30,6 +30,11 @@ const config = {
             use: ['css-loader', 'sass-loader']
           })
       },
+      {
+        test: /\.(ttff?|woff2?|svg)$/,
+        use: ['file-loader?name=fonts/[name].[ext]&esModule=false'], 
+      },
+
     ],
   },
 

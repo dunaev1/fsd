@@ -1,0 +1,10 @@
+.ratebutton {
+  position: relative;
+  display: flex;
+
+  .filled, .bordered {
+    width: 24px;
+    height: 24px;
+
+  }
+}

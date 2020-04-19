@@ -4,6 +4,9 @@ include ./components/button/button
 include ./components/checkbox/checkbox
 include ./components/radiogroup/radiogroup
 include ./components/toggle/toggle
+include ./components/likebutton/likebutton
+include ./components/ratebutton/ratebutton
+include ./components/pagination/pagination
 
 doctype html
 html(lang="en")
@@ -15,7 +18,7 @@ html(lang="en")
   body
     script(src="main.bundle.js")
     //.wrapper
-    +textbox({title: "Fuck", placeholder: "Email:"})
+    +textbox({title: "Text field", placeholder: "Email:"})
     +textbox({title: "shit", text: "Sluts"})
     +guests({values: [1,2,3]})
     +textbox
@@ -28,4 +31,7 @@ html(lang="en")
     +checkbox({text: "Можно пригласить гостей \n(до 10 человек)", isrich: true, checked: false})
     +radiogroup({name: "radio1", labels: ["Мужчина", "Женщина"], isel: 0})
     +toggle({text: "fuck fuck"})
-  
+    +likebutton({value: 1})
+    +likebutton({value: 12, checked: true})
+    +ratebutton({stars: 3}) 
+    +pagination

@@ -1,0 +1,20 @@
+//-
+  options.value
+  options.checked
+include ./ico_heart
+
+mixin likebutton(options)
+  -
+    var value = 0, checked = false
+    if (typeof(options) != "undefined") {
+      typeof(options.value) != "undefined" && (value = options.value)
+      typeof(options.checked) != "undefined" && (checked = options.checked)
+    }
+  .likebutton
+    label
+      input(type="checkbox" checked= checked)
+      .border
+        .border-inside
+      +ico_heart_filled
+      +ico_heart_bordered
+      .value= value

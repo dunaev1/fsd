@@ -32,7 +32,7 @@
     display: block;
   }
 
-  &:hover, input:focus ~ .checkmark {
+  &:hover, &:not(:hover) input:focus ~ .checkmark {
     opacity: 0.5;
   }
 
@@ -51,7 +51,7 @@
     border-color: #000;
     border-width: 0px 2px 2px 0px;
     border-image: linear-gradient(180deg, var(--c_purple) 0%, var(--c_purple_grad) 100%);
-    border-image-slice: 2;
+    border-image-slice: 1;
     transform: rotate(45deg);
   }
 }

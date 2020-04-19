@@ -1,0 +1,51 @@
+@import "../../common/fonts.scss";
+
+.pagination {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+
+  @include font-body();
+  color: var(--c_dark75);
+
+  .pagebar {
+    display: flex;
+    justify-content: center;
+
+    font-size: 12px;
+    padding-bottom: 10px;
+
+    .button {
+      width: 40px;
+      height: 40px;
+      color: var(--c_dark50);
+    }
+
+    .arrow {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(180deg, var(--c_green) 0%, var(--c_green_grad) 100%);
+      border-radius: 22px;
+    }
+    .pic {
+    }
+    .pageon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      color: #fff;
+      background: linear-gradient(180deg, var(--c_purple) 0%, var(--c_purple_grad) 100%);
+      border-radius: 22px;
+      font-weight: bold;
+    }
+  }
+
+  .desc {
+    display: flex;   
+    justify-content: center; 
+  }
+}
+

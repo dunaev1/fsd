@@ -1,0 +1,18 @@
+//-
+  options.stars   int
+
+include ./ico_star
+
+mixin ratebutton(options)
+  -
+    var stars = 0, n = 0
+    if (typeof(options) != "undefined") {
+      typeof(options.stars) != "undefined" && (stars = options.stars)
+    }
+
+  .ratebutton
+    while n < 5
+      if n++ < stars
+        +ico_star_filled
+      else
+        +ico_star_bordered

@@ -34,7 +34,7 @@
     background-color: var(--c_purple);
   }
 
-  &:hover, input:focus ~ .checkmark {
+  &:hover, &:not(:hover) input:focus ~ .checkmark {
     opacity: 0.5;
   }
 

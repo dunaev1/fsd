@@ -6,6 +6,7 @@ body {
   color: #999;
   -webkit-font-smoothing: antialiased;
   outline: none;
+  //display: flex;
 }
 
 * {
@@ -21,6 +22,12 @@ h3 {
   /* identical to box height */
 
   text-transform: uppercase;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url('fonts/Montserrat-Regular.ttf') format('truetype'),
+       url('fonts/fuck.woff') format('woff') ;
 }
 
 [hidden] {
