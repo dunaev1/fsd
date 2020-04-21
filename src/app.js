@@ -12,4 +12,5 @@ import "./components/toggle/toggle.scss"
 import "./components/likebutton/likebutton.scss"
 import "./components/ratebutton/ratebutton.scss"
 import "./components/pagination/pagination.scss"
+import "./components/checkboxlist/checkboxlist.scss"
 import './main.css'

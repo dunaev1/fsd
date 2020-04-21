@@ -1,0 +1,31 @@
+//-
+  opt.title       string
+  opt.expanded    bool
+  opt.content     [[item1_text:string, item1_checked:bool], ...]
+
+include ../checkbox/checkbox
+include ./ico_drop
+
+mixin checkboxlist(opt)
+  -
+    var title, expanded = true, content = []
+    if (typeof(opt) != "undefined") {
+      typeof(opt.title) != "undefined" && (title = opt.title)
+      typeof(opt.expanded) != "undefined" && (expanded = opt.expanded)
+      typeof(opt.content) != "undefined" && (content = opt.content)
+    }
+  .checkboxlist
+    label
+      input(type="checkbox" checked= expanded)
+      .header
+        .title= title
+        .spacer
+        .pic
+          +ico_drop
+
+      .list
+        each item, i in content
+          if (typeof(item) == "object" && item.length == 2)
+            .checkbox-container
+              +checkbox({text: item[0], checked: item[1]})
+

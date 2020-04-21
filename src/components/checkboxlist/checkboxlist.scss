@@ -1,0 +1,54 @@
+@import "../../common/fonts.scss";
+
+.checkboxlist {
+  @include font-body();
+  margin: 0;
+
+  input {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+  .header {
+    display: flex;
+    padding-bottom: 5px;
+    .title {
+      @include font-h3();
+      color: var(--c_dark100);
+      flex-grow: 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .spacer {
+      flex-grow: 1;  
+    }
+
+    .pic {
+      display: flex;
+      flex-grow: 0;
+      stroke: var(--c_dark50);
+    }
+      
+  }
+
+  input:focus ~ .header {
+    opacity: 0.5;
+  }
+
+  input:checked ~ .header .pic {
+    transform: translateX(0px) rotate(180deg);
+  }
+  .list {
+    display: none;
+
+    .checkbox-container {
+    }
+  }
+
+
+  input:checked ~ .list {
+    display: block;
+  }
+}

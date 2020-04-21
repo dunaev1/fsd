@@ -7,6 +7,7 @@ include ./components/toggle/toggle
 include ./components/likebutton/likebutton
 include ./components/ratebutton/ratebutton
 include ./components/pagination/pagination
+include ./components/checkboxlist/checkboxlist
 
 doctype html
 html(lang="en")
@@ -35,3 +36,4 @@ html(lang="en")
     +likebutton({value: 12, checked: true})
     +ratebutton({stars: 3}) 
     +pagination
+    +checkboxlist({title: "expandedable checkbox list", content: [["Завтрак", false], ["Письменный cтол", false], ["Стул для кормления", true], ["Кроватка", true], ["Телевизор", true]]})
