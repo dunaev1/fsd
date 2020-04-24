@@ -8,6 +8,7 @@ include ./components/likebutton/likebutton
 include ./components/ratebutton/ratebutton
 include ./components/pagination/pagination
 include ./components/checkboxlist/checkboxlist
+include ./components/bulletlist/bulletlist
 
 doctype html
 html(lang="en")
@@ -36,4 +37,5 @@ html(lang="en")
     +likebutton({value: 12, checked: true})
     +ratebutton({stars: 3}) 
     +pagination
-    +checkboxlist({title: "expandedable checkbox list", content: [["Завтрак", false], ["Письменный cтол", false], ["Стул для кормления", true], ["Кроватка", true], ["Телевизор", true]]})
+    +checkboxlist({title: "expandable checkbox list", content: [["Завтрак", false], ["Письменный cтол", false], ["Стул для кормления", true], ["Кроватка", true], ["Телевизор", true]]})
+    +bulletlist({list: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия - после 13:00, a выезд до 12:00"]})

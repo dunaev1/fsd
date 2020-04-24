@@ -31,8 +31,12 @@ const config = {
           })
       },
       {
-        test: /\.(ttff?|woff2?|svg)$/,
+        test: /\.(ttff?|woff2?)$/,
         use: ['file-loader?name=fonts/[name].[ext]&esModule=false'], 
+      },
+      {
+        test: /.svg$/,
+        use: ['file-loader?name=img/[name].[ext]&esModule=false'], 
       },
 
     ],

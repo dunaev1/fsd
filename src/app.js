@@ -13,4 +13,5 @@ import "./components/likebutton/likebutton.scss"
 import "./components/ratebutton/ratebutton.scss"
 import "./components/pagination/pagination.scss"
 import "./components/checkboxlist/checkboxlist.scss"
+import "./components/bulletlist/bulletlist.scss"
 import './main.css'

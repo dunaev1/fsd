@@ -1,0 +1,15 @@
+//-
+  opt.list     [item1_text:string, ...]
+
+mixin bulletlist(opt)
+  -
+    var list = []
+    if (typeof(opt) != "undefined") {
+      typeof(opt.list) != "undefined" && (list = opt.list)
+    }
+  .bulletlist
+    ul
+      each val in opt.list
+        li= val
+
+
