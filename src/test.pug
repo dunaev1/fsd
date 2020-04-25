@@ -9,6 +9,7 @@ include ./components/ratebutton/ratebutton
 include ./components/pagination/pagination
 include ./components/checkboxlist/checkboxlist
 include ./components/bulletlist/bulletlist
+include ./components/facility/facility
 
 doctype html
 html(lang="en")
@@ -39,3 +40,6 @@ html(lang="en")
     +pagination
     +checkboxlist({title: "expandable checkbox list", content: [["Завтрак", false], ["Письменный cтол", false], ["Стул для кормления", true], ["Кроватка", true], ["Телевизор", true]]})
     +bulletlist({list: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия - после 13:00, a выезд до 12:00"]})
+    +facility({pic: 0, header: "комфорт", body: "Шумопоглощающие стены"})
+    +facility({pic: 1, header: "удобство", body: "Окно в каждой из спален"})
+    +facility({pic: 2, header: "Уют", body: "Номер оснащен камином"})

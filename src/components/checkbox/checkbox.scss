@@ -6,8 +6,9 @@
   @include font-body();
   color: var(--c_dark50);
 
-  padding: 0px 0px 10px 30px;
-
+  padding: 0px 0px 12px 30px;
+  align-items: center;
+  line-height: 18px;
   // text-transform: capitalize;
 
   input {
@@ -19,7 +20,7 @@
 
   .checkmark {
     position: absolute;
-    top: 0;
+    top: -1px;
     left: 0;
     width: 20px;
     height: 20px;

@@ -1,0 +1,26 @@
+//-
+  opt.pic       int
+  opt.header    str
+  opt.body      str
+
+include ./ico_facil.pug
+
+mixin facility(opt)
+  -
+    var pic = 0, header = "header", body = "body"
+    if (typeof(opt) != "undefined") {
+      typeof(opt.pic) != "undefined" && (pic = opt.pic)
+      typeof(opt.header) != "undefined" && (header = opt.header)
+      typeof(opt.body) != "undefined" && (body = opt.body)
+    }
+  .facility
+    case pic
+      when 1
+        +ico_city
+      when 2
+        +ico_hot
+      default
+        +ico_smile
+    .content
+      .header= header
+      .body= body

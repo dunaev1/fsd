@@ -30,6 +30,13 @@ h3 {
        url('fonts/fuck.woff') format('woff') ;
 }
 
+@font-face {
+  font-family: Montserrat;
+  font-weight: bold;
+  src: url('fonts/Montserrat-Bold.ttf') format('truetype'),
+       url('fonts/fuck.woff') format('woff') ;
+}
+
 [hidden] {
   display: none;
 }

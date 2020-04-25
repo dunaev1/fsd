@@ -1,0 +1,27 @@
+@import "../../common/fonts.scss";
+
+.facility {
+  display: flex;
+
+  color: var(--c_dark75);
+  border-bottom: 1px solid var(--c_dark10);
+  
+  padding-bottom: 20px;
+
+  .content {
+    padding: 2px 0 0 10px;
+    display: grid;
+    height: 48px;
+
+    .header {
+      @include font-h3();
+      text-transform: capitalize;
+      font-size: 14px;
+      height: 22px;
+    }
+    .body {
+      @include font-body();
+    }
+  }
+   
+}
