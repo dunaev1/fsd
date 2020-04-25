@@ -15,4 +15,5 @@ import "./components/pagination/pagination.scss"
 import "./components/checkboxlist/checkboxlist.scss"
 import "./components/bulletlist/bulletlist.scss"
 import "./components/facility/facility.scss"
+import "./components/feedback/feedback.scss"
 import './main.css'

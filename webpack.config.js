@@ -3,7 +3,23 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pug = {
   test: /\.pug$/,
-  use: ['html-loader?attrs=false', 'pug-html-loader']
+  use: [ 
+    {
+      //'html-loader?attrs=false',
+      loader: 'html-loader',
+      options: {
+        attributes: {
+          list: [
+            {
+              tag: "img",
+              attributes: "src",
+              type: "src",
+            }
+          ]
+        }
+      }
+    },
+    'pug-html-loader']
 };
 const config = {
   entry: './src/app.js',
@@ -35,7 +51,7 @@ const config = {
         use: ['file-loader?name=fonts/[name].[ext]&esModule=false'], 
       },
       {
-        test: /.svg$/,
+        test: /\.(svg|png)$/,
         use: ['file-loader?name=img/[name].[ext]&esModule=false'], 
       },
 

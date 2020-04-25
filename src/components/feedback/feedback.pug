@@ -1,0 +1,35 @@
+//-
+  opt.img     str
+  opt.anch    [int, int]
+  opt.scale   double  (%)
+  opt.name    str
+  opt.time    str
+  opt.text    str
+  opt.likes   int
+  opt.isliked bool
+
+include ../likebutton/likebutton
+
+mixin feedback(opt)
+  -
+    var img, anch = [0, 0], name="Name", time = "now", text = "sample", 
+        likes = 1, isliked = false, scale = 1
+    if (typeof(opt) == "object") {
+      typeof(opt.img) != "undefined" && (img = opt.img)
+      typeof(opt.anch) != "undefined" && (anch = opt.anch)
+      typeof(opt.scale) != "undefined" && (scale = opt.scale)
+      typeof(opt.name) != "undefined" && (name = opt.name)
+      typeof(opt.time) != "undefined" && (time = opt.time)
+      typeof(opt.text) != "undefined" && (text = opt.text)
+      typeof(opt.likes) != "undefined" && (likes = opt.likes)
+      typeof(opt.isliked) != "undefined" && (isliked = opt.isliked)
+    }
+  .feedback
+    .image(style="background-image: url(" + img + "); background-size:" + scale + "%; background-position: " 
+      + anch[0] + "px " + anch[1] + "px;")
+    .header
+      .name= name
+      .time= time
+    .likes
+      +likebutton({value: likes, checked: isliked})
+    .text= text
