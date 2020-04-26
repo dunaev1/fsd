@@ -11,6 +11,7 @@
 include ../likebutton/likebutton
 
 mixin feedback(opt)
+  //- ${require('./components/feedback/feedback.scss')}
   -
     var img, anch = [0, 0], name="Name", time = "now", text = "sample", 
         likes = 1, isliked = false, scale = 1
@@ -25,7 +26,7 @@ mixin feedback(opt)
       typeof(opt.isliked) != "undefined" && (isliked = opt.isliked)
     }
   .feedback
-    .image(style="background-image: url(" + img + "); background-size:" + scale + "%; background-position: " 
+    .image(style="background-image: url(${require('" + img + "')}); background-size:" + scale + "%; background-position: " 
       + anch[0] + "px " + anch[1] + "px;")
     .header
       .name= name

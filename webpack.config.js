@@ -1,5 +1,5 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pug = {
   test: /\.pug$/,
@@ -8,6 +8,7 @@ const pug = {
       //'html-loader?attrs=false',
       loader: 'html-loader',
       options: {
+        interpolate: true,
         attributes: {
           list: [
             {
@@ -31,20 +32,8 @@ const config = {
     rules: [
       pug,
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract(
-          {
-            fallback: 'style-loader',
-            use: ['css-loader']
-          })
-      },
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract(
-          {
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
-          })
+        test: /\.s?css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(ttff?|woff2?)$/,
@@ -59,11 +48,7 @@ const config = {
   },
 
   plugins: [
-    new ExtractTextPlugin(
-      {
-        filename: 'main.css',
-      }
-    ),
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       filename: 'test_page.html',
       template: 'src/test.pug',
