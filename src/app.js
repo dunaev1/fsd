@@ -16,4 +16,8 @@ import "./components/checkboxlist/checkboxlist.scss"
 import "./components/bulletlist/bulletlist.scss"
 import "./components/facility/facility.scss"
 import "./components/feedback/feedback.scss"
+import "./components/logo/logo.scss"
+
+import "./pages/colors_types/colors_types.scss"
+
 import './main.css'

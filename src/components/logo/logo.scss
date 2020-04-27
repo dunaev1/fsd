@@ -1,0 +1,23 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+
+  .pic {
+    background-image: url("./images/grey_logo.svg");
+    width: 48px;
+    height: 48px;
+  }
+
+  .pic-color {
+    //background-image: url("./images/color_logo.svg");
+    width: 40px;
+    height: 40px;
+  }
+
+  .toxin {
+    padding-left: 12px;
+    //background-image: "./images/toxin_logo.svg";
+    width: 54px;
+    height: 14px;
+  }
+}

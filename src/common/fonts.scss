@@ -1,4 +1,12 @@
 
+@mixin font-h2() {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  color: var(--c_dark100);
+}
+
 @mixin font-h3() {
   font-family: Montserrat;
   font-style: normal;

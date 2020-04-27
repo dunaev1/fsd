@@ -54,12 +54,11 @@ const config = {
       template: 'src/test.pug',
       inject: false
     }),
-    //new HtmlWebpackPlugin({
-    //  filename: 'index1.html',
-    //  template: 'src/index.pug',
-    //  inject: false
-    //}),
-
- ]
+    new HtmlWebpackPlugin({
+      filename: 'colors_types.html',
+      template: 'src/pages/colors_types/colors_types.pug',
+      inject: false
+    }),
+  ]
 };
 module.exports = config;

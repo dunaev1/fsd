@@ -1,0 +1,77 @@
+@import "../../common/fonts.scss";
+
+body {
+  margin: 0;
+}
+
+.colors-types {
+  .logo-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+  
+  display: flex;
+  justify-content: center;
+  padding-top: 145px;
+  
+  .margin {
+    width: 150px;
+    flex-shrink: 10;
+    border: 1px solid;
+  }
+  .left {
+    flex-shrink: 1;
+    min-width: 70px;
+    .color-item {
+      display: flex;
+      flex-flow: row wrap;
+      padding: 0 0 20px 0;
+      .square {
+        width: 70px;
+        height: 70px;
+        border-radius: 6px;
+      }
+      .spacer {
+        width: 40px;
+      }
+      .content {
+        @include font-h2();
+        padding-top: 7px;
+        line-height: 29px;
+        .desc {
+        }
+        .hex {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  .center {
+    flex-grow: 1;
+    
+    .font-item {
+      display: flex;
+      padding-bottom: 50px;
+
+      .header {
+        font-family: Montserrat;
+        max-width: 500px;
+        text-align: right;
+        flex: 1 2 auto;
+        //flex-shrink: 20;
+        //flex-grow: 10;
+        line-height: 28px;
+      }
+
+      .desc {
+        padding-left: 30px;
+        max-width: 360px;
+        flex: 10 1 auto;
+        //width: 400px;
+      }
+    }
+  }
+}
+
+

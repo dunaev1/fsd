@@ -37,6 +37,20 @@ h3 {
        url('fonts/fuck.woff') format('woff') ;
 }
 
+@font-face {
+  font-family: Quicksand;
+  src: url('fonts/Quicksand-Regular.ttf') format('truetype'),
+       url('fonts/fuck.woff') format('woff') ;
+}
+
+@font-face {
+  font-family: Quicksand;
+  font-weight: bold;
+  src: url('fonts/Quicksand-Bold.ttf') format('truetype'),
+       url('fonts/fuck.woff') format('woff') ;
+}
+
+
 [hidden] {
   display: none;
 }
