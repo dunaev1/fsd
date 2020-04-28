@@ -12,25 +12,23 @@ mixin _color(opt)
       .hex= opt[2]
 
 
-//-     0           1                2               3                  4
-  opt [size: int, text_header: str, text_desc: str, font_family: str, isbold: bool]
+//
+  opt.style: int
+  opt.text_header: str
+  opt.text_desc: str
 
 mixin _font(opt)
   -
-    var size = 12, text_header, text_desc, isquicksand = false, isbold = true, line_height = 24
+    var text_header, text_desc, style = 0
     if (typeof(opt) == "object") {
-      typeof(opt.size) != "undefined" && (size = opt.size)
       typeof(opt.text_header) != "undefined" && (text_header = opt.text_header)
       typeof(opt.text_desc) != "undefined" && (text_desc = opt.text_desc)
-      typeof(opt.isquicksand) != "undefined" && (isquicksand = opt.isquicksand)
-      typeof(opt.isbold) != "undefined" && (isbold = opt.isbold)
+      typeof(opt.style) != "undefined" && (style = opt.style)
     }
-  .font-item(style="font-size: " + size + "px;")
-    .header= text_header
-    .desc(style= "font-family: " + (isquicksand ? "Quicksand" : "Montserrat")   + "; \
-                  font-weight: " + (isbold ? "bold" : "normal")                 + "; \
-                  color: " + (isbold ? "var(--c_dark100)" : "var(--c_dark75)")  + "; \
-                  line-height: " + line_height + "px" +                           ";")= text_desc
+    var hstyle = "h" + style, dstyle = "d" + style
+  .font-item
+    .header(class= hstyle)= text_header
+    .desc(class= dstyle)= text_desc
 
 doctype html
 html(lang="en")
@@ -52,10 +50,9 @@ html(lang="en")
         +_color(["var(--c_purple)", "Purple", "#BC9CFF"])
         +_color(["var(--c_green)", "Green", "#6FCF97"])
       .center
-        +_font({size: 24, text_header: "H1", text_desc: "This one is the sub-section or widget title", isquicksand: true, line_height: 30})
-        +_font({size: 19, text_header: "H2", text_desc: "Next one is the item title inside widgets", isquicksand: true, line_height: 24})
-        +_font({size: 12, text_header: "H3", text_desc: "This is a label or CTA text", line_height: 15})
-        +_font({size: 14, text_header: "Body", text_desc: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", 
-                isbold: false, line_height: 24})
+        +_font({style: 1, text_header: "H1", text_desc: "This one is the sub-section or widget title"})
+        +_font({style: 2, text_header: "H2", text_desc: "Next one is the item title inside widgets"})
+        +_font({style: 3, text_header: "H3", text_desc: "This is a label or CTA text"})
+        +_font({style: 0, text_header: "Body", text_desc: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
       .margin
 

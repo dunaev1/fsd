@@ -49,11 +49,11 @@ const config = {
 
   plugins: [
     new MiniCssExtractPlugin(),
-    new HtmlWebpackPlugin({
+    /*new HtmlWebpackPlugin({
       filename: 'test_page.html',
       template: 'src/test.pug',
       inject: false
-    }),
+    }),*/
     new HtmlWebpackPlugin({
       filename: 'colors_types.html',
       template: 'src/pages/colors_types/colors_types.pug',
