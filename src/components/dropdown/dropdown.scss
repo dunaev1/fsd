@@ -78,7 +78,7 @@
 
 
 
-  .dropdown:hover .dd-input, .dd-input:focus {
+  &:hover .dd-input, .dd-input:focus {
     
     border: 1px solid var(--c_dark50);
     outline: none;
@@ -102,9 +102,15 @@
     text-transform: uppercase;
   
     box-shadow: 0px 10px 20px var(--c_dark05);
+    
+  }
+  
+  .dd-content-a-expanded {
+    position: relative;
+    
   }
 
-  .dropdown:hover .dd-content {
+  &:hover .dd-content {
     border: 1px solid var(--c_dark50);
     border-top: 0;
   }

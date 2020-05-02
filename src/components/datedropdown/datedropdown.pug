@@ -1,0 +1,14 @@
+//-
+  opt.splitted      bool      // 2 dropdowns
+  opt.dates         [date_start, date_fin]
+  opt.captions      [cap_start, cap_fin]
+
+mixin datedropdown(opt)
+  -
+    var splitted = false, dates = []
+    if (typeof(opt) == "object") {
+      typeof(opt.splitted) != "undefined" && (splitted = opt.splitted)
+    }
+  .datedropdown
+    input.datepicker-here
+    .expand.datepicker-here(data-range="true")

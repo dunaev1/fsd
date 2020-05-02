@@ -8,7 +8,7 @@ include ./ico_arrow
 mixin button(options)
   -
     var type = "text", text = "Ok", url = "/urls/empty", classes = ""
-    if(typeof(options) != undefined) {
+    if(typeof(options) != "undefined") {
       typeof(options.type) != "undefined" && (type = options.type)
       typeof(options.text) != "undefined" && (text = options.text)
       typeof(options.url) != "undefined" && (url = options.url);

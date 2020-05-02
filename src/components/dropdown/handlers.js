@@ -13,17 +13,19 @@ function dropdown_show(element) {
 }
 
 function dropdown_hide(element) {
-  var input = element.querySelector('.dd-input');
-  input.classList.remove('input-border-expanded');
-  input.classList.add('input-border');
-
-  var pic = input.querySelector('.ico');
-  pic.classList.remove('dd-pic-expanded');
-  pic.classList.add('dd-pic-collapsed');
-  
   var content = element.querySelector('.dd-content');
-  content.hidden = true;
 
+  if(!content.classList.contains("dd-content-a-expanded")) {
+    var input = element.querySelector('.dd-input');
+    input.classList.remove('input-border-expanded');
+    input.classList.add('input-border');
+
+    var pic = input.querySelector('.ico');
+    pic.classList.remove('dd-pic-expanded');
+    pic.classList.add('dd-pic-collapsed');
+    
+    content.hidden = true;
+  }
 }
 
 function dropdown_toggle(element) {
@@ -38,7 +40,6 @@ function dropdown_hideall(e) {
     dropdown_hide(drops[i].parentElement);
 }
 
-// dropdown behaviour
 function getType(element /*dropdown*/) {
   var content = element.getElementsByClassName("dd-content")[0]
   var type
@@ -167,7 +168,6 @@ function attachHandlers() {
   }
 }
 
-//document.addEventListener("click", dropdown_hideall);
 window.addEventListener("load", attachHandlers);
 
 var getParentElementByClassName = window.gservice.getParentElementByClassName

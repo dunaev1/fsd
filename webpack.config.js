@@ -46,7 +46,10 @@ const config = {
         test: /\.(svg|png)$/,
         use: ['file-loader?name=img/[name].[ext]&esModule=false'], 
       },
-
+      {
+        test: /(jquery.min.js)$/, // copy files
+        use: ['file-loader?name=[name].[ext]&esModule=false'],
+      }
     ],
   },
 

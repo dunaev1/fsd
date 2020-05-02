@@ -1,6 +1,9 @@
 import './init.js'
 import './components/dropdown/handlers.js'
 
+import './components/datedropdown/air/datepicker.js'
+import './components/datedropdown/air/datepicker_mod.css'
+import '../node_modules/jquery/dist/jquery.min.js'
 
 import "./common/colors.css";
 import "./components/textbox/textbox.scss";
@@ -17,6 +20,7 @@ import "./components/bulletlist/bulletlist.scss"
 import "./components/facility/facility.scss"
 import "./components/feedback/feedback.scss"
 import "./components/logo/logo.scss"
+
 
 import "./pages/colors_types/colors_types.scss"
 import "./pages/form_elements/form_elements.scss"
