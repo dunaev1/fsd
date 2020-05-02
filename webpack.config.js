@@ -28,6 +28,9 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js'
   },
+  /*optimization: {
+    minimize: false,
+  },*/
   module: {
     rules: [
       pug,
@@ -57,6 +60,11 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'colors_types.html',
       template: 'src/pages/colors_types/colors_types.pug',
+      inject: false
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'form_elements.html',
+      template: 'src/pages/form_elements/form_elements.pug',
       inject: false
     }),
   ]

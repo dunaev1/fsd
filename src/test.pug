@@ -1,5 +1,5 @@
 include ./components/textbox/textbox
-include ./components/dropdown/guests
+include ./components/dropdown/dropdown
 include ./components/button/button
 include ./components/checkbox/checkbox
 include ./components/radiogroup/radiogroup
@@ -25,7 +25,7 @@ html(lang="en")
     //.wrapper
     +textbox({title: "Text field", placeholder: "Email:"})
     +textbox({title: "shit", text: "Sluts"})
-    +guests({values: [1,2,3]})
+    +dropdown({values: [1,2,3]})
     +textbox
     +button({text: "fuck"})
     +button({text: "fuck", type: "bordered"})

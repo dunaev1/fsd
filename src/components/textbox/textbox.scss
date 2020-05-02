@@ -1,0 +1,63 @@
+@import "../../common/fonts.scss";
+
+.textbox {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  font-kerning: none;
+
+  color: var(--c_dark100);
+
+  
+  margin-bottom: 20px;
+
+
+  .textbox-input {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13.6px;
+    color: var(--c_dark75);
+    width: 100%;
+    height: 44px;
+    padding: 13px 15px 13px 14px;
+    background: #FFFFFF;
+    border: 1px solid var(--c_dark25);
+    box-sizing: border-box;
+    border-radius: 4px;
+
+   }
+
+  .textbox-input:hover, .textbox-input:focus, .hovered {
+  
+    border: 1px solid var(--c_dark50);
+    outline: none;
+  }
+
+  .textbox-input::placeholder {
+    color: var(--c_dark25);
+  }
+  
+  .textbox-input[pattern]:invalid {
+    background: var(--c_purple);
+  }
+
+  .caption {
+    display: flex;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    @include font-h3();
+    .h {
+    }
+    .tip {
+      flex-grow: 1;
+      text-align: right;
+      
+      font-weight: normal;
+      font-size: 11.5px;
+      color: var(--c_dark50);
+
+    }
+  }
+}

@@ -2,28 +2,29 @@
   options.type      {"text", "text-default", "bordered", "filled", "pay"}
   options.text
   options.url       
-
+  options.classes     str // additional classes
 include ./ico_arrow
 
 mixin button(options)
   -
-    var type = "text", text = "Ok", url = "/urls/empty"
+    var type = "text", text = "Ok", url = "/urls/empty", classes = ""
     if(typeof(options) != undefined) {
       typeof(options.type) != "undefined" && (type = options.type)
       typeof(options.text) != "undefined" && (text = options.text)
       typeof(options.url) != "undefined" && (url = options.url);
+      typeof(options.classes) != "undefined" && (classes = options.classes);
     }
   case type
     when "bordered"
-      a.button-bordered(href= url)= text
+      a.button-bordered(class= classes href= url)= text
     when "filled" 
-      a.button-filled(href= url)= text
+      a.button-filled(class= classes href= url)= text
     when "pay"
-      a.button-filled(href= url)
+      a.button-filled(class= classes href= url)
         .button-text= text
         .spacer
         +ico_arrow
     when "text"
-      a.button(href= url)= text
+      a.button(class= classes href= url)= text
     default
-      a.button-default(href= url)= text
+      a.button-default(class= classes href= url)= text

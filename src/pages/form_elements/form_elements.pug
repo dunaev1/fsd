@@ -1,0 +1,28 @@
+
+include ../../components/logo/logo
+include ../../components/button/button
+include ../../components/textbox/textbox
+include ../../components/dropdown/dropdown
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Form Elements
+    link(rel="stylesheet" type="text/css" href="main.css")    
+    script(src="main.bundle.js")
+  body
+    .form-elements
+      .logo-container
+        +logo
+      .grid-a
+        //+button({text: "grid-a"})
+        +textbox({title: "text field", tip: "default", placeholder: "Email",})
+        +textbox({title: "text field", tip: "hover / focus",  text: "This is pretty awesome", ishovered: true})
+        +dropdown({custom_title: "dropdown", tip: "default"})
+        +textbox({title: "masked text field", tip: "default",  text: "", mask: "date"})
+        +dropdown({type: "rooms"})
+      .grid-b
+        +button({text: "grid-b"})
+      .grid-c
+        +button({text: "grid-c"})
