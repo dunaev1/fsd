@@ -1,44 +1,28 @@
-function dropdown_show(element) {
-  var input = element.querySelector('.dd-input');
-  input.classList.remove('input-border');
-  input.classList.add('input-border-expanded');
+// dd input handling
+function input_observer(element, checked) {
+  if(checked)
+    on_dropdown_show(element)
+  else
+    on_dropdown_hide(element)
+}
 
-  var pic = input.querySelector('.ico');
-  pic.classList.remove('dd-pic-collapsed');
-  pic.classList.add('dd-pic-expanded');
-
+function on_dropdown_show(element) {
   var content = element.querySelector('.dd-content');
-  content.style.width = content.parentElement.offsetWidth + "px";
+  if (!element.querySelector(".dd-input").classList.contains("dd-always-expanded"))
+    content.style.width = content.parentElement.offsetWidth + "px";
   content.hidden = false;
 }
 
-function dropdown_hide(element) {
+function on_dropdown_hide(element) {
   var content = element.querySelector('.dd-content');
-
-  if(!content.classList.contains("dd-content-a-expanded")) {
-    var input = element.querySelector('.dd-input');
-    input.classList.remove('input-border-expanded');
-    input.classList.add('input-border');
-
-    var pic = input.querySelector('.ico');
-    pic.classList.remove('dd-pic-expanded');
-    pic.classList.add('dd-pic-collapsed');
-    
-    content.hidden = true;
-  }
+  content.hidden = true;
 }
 
-function dropdown_toggle(element) {
-  var content = element.querySelector('.dd-content');
-  if(content.hidden) dropdown_show(element);
-  else dropdown_hide(element);
+///
+function dd_hide(element) {
+  modules.dd_input.collapse(element)
 }
 
-function dropdown_hideall(e) {
-  var drops = document.getElementsByClassName("dd-content");
-  for(var i = 0; i < drops.length; i++)
-    dropdown_hide(drops[i].parentElement);
-}
 
 function getType(element /*dropdown*/) {
   var content = element.getElementsByClassName("dd-content")[0]
@@ -75,7 +59,7 @@ function clear_all(element /*dropdown*/) {
 
 function apply_dd(element /*dropdown*/) {
   var input = element.getElementsByClassName("dd-input-text")[0]
-  dropdown_hide(element)
+  dd_hide(element)
 
   var type = getType(element), val
   var arr  = getQuantityArray(element)
@@ -102,25 +86,18 @@ function show_clear_butt(element /*dropdown*/) {
     clear_elements[0].hidden = (arr[0] + arr[1] + arr[2] == 0)
 }
 
-function dd_over(element /*dropdown*/) {
-  var apply_butt = element.getElementsByClassName("dd-apply")
-  if(apply_butt.length == 0) { apply_dd(element) }
- 
-  dropdown_hide(element)
-}
 
-// handlers
-function keyboard_handler(e) { 
-  if (e.key == " ")
-    dropdown_toggle(getParentElementByClassName(e.target, "dropdown")) 
-}
-
-function onclick_handler(e) {
-  dropdown_toggle(getParentElementByClassName(e.target, "dropdown")) 
-}
-
-function on_over(e) {
-  dd_over(e.target)
+function on_globalclick(e) {
+  var current_dd = getParentElementByClassName(e.target, "dropdown")
+  var dropdowns = document.getElementsByClassName("dropdown")
+  var i;
+  for(i = 0; i < dropdowns.length; i++) {
+    if (dropdowns[i] != current_dd) {
+      dd_hide(dropdowns[i])
+      if (getType(dropdowns[i]) == "rooms")
+        apply_dd(dropdowns[i])
+    }
+  }
 }
 
 function on_increase(e) { increase(e.target.parentElement) }
@@ -134,14 +111,8 @@ function on_apply_key(e) { if(e.key == " ") apply_dd(getParentElementByClassName
 
 
 function attachHandlers() {
-  dropdowns = document.getElementsByClassName("dropdown");
-  var i;
+  dropdowns = document.getElementsByClassName("dropdown")
   for(i = 0; i < dropdowns.length; i++) {
-    dropdowns[i].onmouseleave = on_over
-    input = dropdowns[i].querySelector(".dd-input");
-    // supposing 1 input
-    input.onclick = onclick_handler
-    input.onkeydown = keyboard_handler
   }
 
   increasers = document.getElementsByClassName("dd-row-pls")
@@ -168,7 +139,19 @@ function attachHandlers() {
   }
 }
 
-window.addEventListener("load", attachHandlers);
+function init() {
+  attachHandlers()
+  
+  // obsersers
+  dropdowns = document.getElementsByClassName("dropdown")
+  var i;
+  for(i = 0; i < dropdowns.length; i++)
+    modules.dd_input.addObserver(dropdowns[i], input_observer)
+}
+
+window.addEventListener("load", init)
+document.addEventListener("click", on_globalclick)
 
 var getParentElementByClassName = window.gservice.getParentElementByClassName
+var modules = window.modules
 

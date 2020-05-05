@@ -28,9 +28,9 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js'
   },
-  /*optimization: {
+  optimization: {
     minimize: false,
-  },*/
+  },
   module: {
     rules: [
       pug,

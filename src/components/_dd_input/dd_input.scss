@@ -1,0 +1,73 @@
+/*
+   use 
+    & .dd-checked ~ ... 
+   for containers
+ */
+
+@mixin dd-input() {
+  .dd-input {
+
+    height: 44px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    border: 1px solid var(--c_dark25);
+    display: flex;
+    align-items: center;
+    color: var(--c_dark75);
+      
+    .dd-input-text {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 24px;
+
+      padding: 0px 15px 0px 15px;
+      align-items: center;
+      width: 100%;
+      //flex-grow: 10;
+      border: 0;
+      outline: none;
+      color: var(--c_dark75);
+    }
+    
+    .ico {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: url("../_dd_input/images/ico_drop.svg");   
+      outline: none;
+    }
+    .ico:focus {
+      opacity: 0.25;
+    }
+
+
+    .dd-pic-collapsed {
+      opacity: 0.5;
+    }
+
+    .dd-pic-expanded {
+      opacity: 0.75;
+    }
+
+  }
+
+  &:hover .dd-input, .dd-input:focus-within {
+    border: 1px solid var(--c_dark50);
+  }
+ 
+  .dd-checked {
+    display: none;
+  }
+
+  .input-border {
+    border-radius: 4px;
+  }
+
+  .input-border-expanded {
+    border-radius: 4px 4px 0 0;
+  }
+  
+  // .dd-always-expanded
+}

@@ -1,4 +1,5 @@
 @import "../../common/fonts.scss";
+@import "../_dd_input/dd_input.scss";
 
 .dropdown {
   color: var(--c_dark100);
@@ -20,70 +21,13 @@
       text-align: right;
     }
   }
-
-  .dd-input {
-
-    height: 44px;
-    background: #FFFFFF;
-    box-sizing: border-box;
-    border: 1px solid var(--c_dark25);
-    display: flex;
-    align-items: center;
-    color: var(--c_dark75);
-      
-    .dd-input-text {
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 24px;
-
-      padding: 0px 15px 0px 15px;
-      align-items: center;
-      width: 100%;
-      //flex-grow: 10;
-      border: 0;
-      outline: none;
-      color: var(--c_dark75);
-    }
-    
-    .ico {
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      background: url("images/ico_drop.svg");   
-    }
-    
-    .dd-pic-collapsed {
-      opacity: 0.5;
-    }
-
-    .dd-pic-expanded {
-      opacity: 0.75;
-    }
-
-  }
-
-  .input-border {
-    border-radius: 4px;
-  }
-
-  .input-border-expanded {
-    border-radius: 4px 4px 0 0;
-  }
-
+  @include dd-input();
+   
+  
   
   .dd-content {
   }
 
-
-
-  &:hover .dd-input, .dd-input:focus {
-    
-    border: 1px solid var(--c_dark50);
-    outline: none;
-
-  }
 
   .dd-content {
     border: 1px solid var(--c_dark25);
@@ -102,7 +46,7 @@
     text-transform: uppercase;
   
     box-shadow: 0px 10px 20px var(--c_dark05);
-    
+    overflow: hidden;
   }
   
   .dd-content-a-expanded {
@@ -141,6 +85,7 @@
     justify-content: center;
     color: var(--c_dark50);
     outline: none;
+    cursor: pointer;
   }
 
   .dd-row-mns:focus, .dd-row-pls:focus {

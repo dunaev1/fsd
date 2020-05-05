@@ -1,5 +1,5 @@
 ;(function (window, $, undefined) { ;(function () {
-    var VERSION = '2.2.3',
+    var VERSION = '2.2.3-shitted',
         pluginName = 'datepicker',
         autoInitSelector = '.datepicker-here',
         $body, $datepickersContainer,
@@ -46,8 +46,8 @@
             range: false,
 
             todayButton: false,
-            clearButton: false,
-
+            clearbutton: true,
+            applybutton: true,
             showEvent: 'focus',
             autoClose: false,
 
@@ -597,6 +597,10 @@
             if (this.opts.onSelect) {
                 this._triggerOnChange()
             }
+        },
+
+        apply: function () {
+            this.hide()
         },
 
         /**
@@ -1480,6 +1484,7 @@
             monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
             today: 'Сегодня',
             clear: 'Очистить',
+            apply: 'Применить',
             dateFormat: 'dd.mm.yyyy',
             timeFormat: 'hh:ii',
             firstDay: 1
@@ -1811,6 +1816,8 @@
         '<div class="datepicker--nav-action" data-action="next">#{nextHtml}</div>',
         buttonsContainerTemplate = '<div class="datepicker--buttons"></div>',
         button = '<span class="datepicker--button" data-action="#{action}">#{label}</span>',
+        button_def = '<span class="datepicker--button defbutton" data-action="#{action}">#{label}</span>',
+        spacer = '<span class="datepicker--spacer"/>',
         datepicker = $.fn.datepicker,
         dp = datepicker.Constructor;
 
@@ -1846,8 +1853,12 @@
             if (this.opts.todayButton) {
                 this._addButton('today')
             }
-            if (this.opts.clearButton) {
+            if (this.opts.clearbutton) {
                 this._addButton('clear')
+            }
+            if (this.opts.applybutton) {
+                this._addSpacer()
+                this._addButtonDef('apply')
             }
         },
 
@@ -1880,6 +1891,26 @@
             this.$buttonsContainer.append(html);
         },
 
+        _addButtonDef: function (type) {
+            if (!this.$buttonsContainer.length) {
+                this._addButtonsContainer();
+            }
+
+            var data = {
+                    action: type,
+                    label: this.d.loc[type]
+                },
+                html = dp.template(button_def, data);
+
+            if ($('[data-action=' + type + ']', this.$buttonsContainer).length) return;
+            this.$buttonsContainer.append(html);
+        },
+        
+        _addSpacer: function () {
+            var html = dp.template(spacer, {});
+            this.$buttonsContainer.append(html);
+        },
+
         _addButtonsContainer: function () {
             this.d.$datepicker.append(buttonsContainerTemplate);
             this.$buttonsContainer = $('.datepicker--buttons', this.d.$datepicker);
@@ -1901,7 +1932,6 @@
                     if (!this.d._isInRange(new Date(y, m+1, 1), 'month')) {
                         this._disableNav('next')
                     }
-                    break;
                 case 'months':
                     if (!this.d._isInRange(new Date(y-1, m, d), 'year')) {
                         this._disableNav('prev')

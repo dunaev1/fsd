@@ -11,3 +11,5 @@ window.gservice = {}
 window.gservice.getParentElementByClassName = getParentElementByClassName
 
 window.handlers = {};
+
+window.modules = {}

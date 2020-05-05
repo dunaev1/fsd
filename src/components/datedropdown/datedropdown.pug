@@ -5,10 +5,38 @@
 
 mixin datedropdown(opt)
   -
-    var splitted = false, dates = []
+    var splitted = false, dates = [], captions = ["Прибытие", "Выезд"] 
     if (typeof(opt) == "object") {
       typeof(opt.splitted) != "undefined" && (splitted = opt.splitted)
+      if( typeof(opt.dates) != "undefined" && opt.dates.length == 2) dates = opt.dates
+      if( typeof(opt.captions) != "undefined" && opt.captions.length == 2) captions = opt.captions
     }
   .datedropdown
-    input.datepicker-here
-    .expand.datepicker-here(data-range="true")
+    if splitted
+      .date-splitted
+        +_drop({title: captions[0]})
+        +_drop({title: captions[1]})
+    else
+      .date-single
+        +_drop({title: captions[0]})
+    //input.datepicker-here
+    //.expand.datepicker-here(data-range="true" data-clearbutton="true" data-applybutton="true")
+
+
+//-
+  opt.title
+  opt.placeholder
+  opt.text
+mixin _drop(opt)
+  -
+    var title = "Date dropdown", placeholder = "ДД.ММ.ГГ", text
+    if (typeof(opt) == "object") {
+      typeof(opt.title) != "undefined" && (title = opt.title)
+      typeof(opt.placeholder) != "undefined" && (placeholder = opt.placeholder)
+      typeof(opt.title) != "undefined" && (title = opt.title)
+      typeof(opt.text) != "undefined" && (text = opt.text)
+    }
+  .title= title
+  .dd-input()
+    input.dd-input-text(value= text placeholder= placeholder)
+    .ico.dd-pic-collapsed

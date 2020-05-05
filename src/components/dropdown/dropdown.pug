@@ -1,41 +1,42 @@
 //-
   in: 
-    options.type              ("guests" or "rooms" or "date")
+    options.type              ("guests" or "rooms")
     options.custom_title      str
     options.tip               str
     options.values            ([$rooms, $beds, $baths] or [$adult, $kids, $babies])
     options.always_expanded   bool
 
-//include ./ico_drop
 include ../button/button
+include ../_dd_input/dd_input
 
 mixin dropdown(options)
   -
-    var title = "Гости", type = "guests", text = "Сколько гостей", tip, input_ro = true
+    var title = "", type = "guests", text = "", tip, input_ro = true
     var v = [0, 0, 0], placeholder, always_expanded = false
 
     if(typeof(options) == 'object') {
       typeof(options.type) != 'undefined' && (type = options.type)
-      if(type == "rooms") {title = "Удобства номера"; text = "Комнаты" }
       typeof(options.custom_title) != 'undefined' && (title = options.custom_title)
       if (typeof(options.values) == 'object' && options.values.length == 3) v = options.values
       typeof(options.tip) != "undefined" && (tip = options.tip)
       typeof(options.always_expanded) != "undefined" && (always_expanded = options.always_expanded)
 
     }
-    if (type == "date") {
-      input_ro = false
-      placeholder = "ДД.ММ.ГГГГ"
+    if (type != "rooms") type = "guests"
+    if (type == "guests") {
+      placeholder = "Сколько гостей"
+    
+    } else {  
+      placeholder = "Комнаты"
+      if(title == "") title = "Удобства номера"
     }
   .dropdown
     .caption
       .h= title
       .tip= tip
-    .dd-input(class= (always_expanded ? "input-border-expanded" : "input-border"))
-        input.dd-input-text(value= text readonly= input_ro placeholder= placeholder)
-        .ico.dd-pic-collapsed
+    +dd_input({always_checked: always_expanded, text: text, placeholder: placeholder, input_ro: input_ro})
     .dd-content(class= type + (always_expanded ? " dd-content-a-expanded" : "") hidden= !always_expanded)
-      if(type == "rooms") 
+      if(type != "guests") 
         +_row({text: "Спальни", val: v[0]})
         +_row({text: "Кровати", val: v[1]})
         +_row({text: "Ванные комнаты", val: v[2]})
