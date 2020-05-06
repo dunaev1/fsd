@@ -1,6 +1,7 @@
 import './init.js'
 import './components/_dd_input/dd_input.js'
 import './components/dropdown/handlers.js'
+import './components/datedropdown/datedropdown.js'
 
 import './components/datedropdown/air/datepicker.js'
 import './components/datedropdown/air/datepicker_mod.css'

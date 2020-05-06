@@ -81,7 +81,8 @@
             onChangeYear: '',
             onChangeDecade: '',
             onChangeView: '',
-            onRenderCell: ''
+            onRenderCell: '',
+            onApply: '',
         },
         hotKeys = {
             'ctrlRight': [17, 39],
@@ -601,6 +602,11 @@
 
         apply: function () {
             this.hide()
+                
+            var onApply = this.opts.onApply
+            if (onApply) {
+              onApply(this)
+            }
         },
 
         /**

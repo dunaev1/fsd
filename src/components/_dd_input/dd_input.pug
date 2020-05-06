@@ -1,6 +1,7 @@
 //-
   Input with the expanded state
   
+  opt.checked             bool
   opt.always_checked      bool
   opt.placeholder         str
   opt.text                str
@@ -8,18 +9,20 @@
 
 mixin dd_input(opt)
   -
-    var placeholder, input_ro = true, text, always_checked
+    var placeholder, input_ro = true, text, always_checked, checked = false
     if (typeof(opt) == "object") {
       typeof(opt.text) != "undefined" && (text = opt.text)
       typeof(opt.placeholder) != "undefined" && (placeholder = opt.placeholder)
       typeof(opt.input_ro) != "undefined" && (input_ro = opt.input_ro)
       typeof(opt.always_checked) != "undefined" && (always_checked = opt.always_checked)
+      typeof(opt.checked) != "undefined" && (checked = opt.checked)
     }
-  
-  .dd-input(class= (always_checked ? "input-border-expanded dd-always-expanded" : "input-border"))
+    if(always_checked) checked = true
+  .dd-input(class= (checked ? "input-border-expanded" : "input-border") + (always_checked ? " dd-always-expanded" : ""))
     input.dd-input-text(value= text readonly= input_ro placeholder= placeholder)
-    .ico(class = (always_checked ? "dd-pic-expanded" : "dd-pic-collapsed") tabindex="0")
+    .ico(class = (checked ? "dd-pic-expanded" : "dd-pic-collapsed") tabindex="0")
   //- 
     this state is controlled by js (have no idea, how to label it)
     and this signals outer elements to show dd-content or handle it in other way
-  input.dd-checked(type= "checkbox")
+  
+  input.dd-checked(type= "checkbox" checked= checked)

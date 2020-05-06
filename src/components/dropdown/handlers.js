@@ -1,14 +1,15 @@
 // dd input handling
 function input_observer(element, checked) {
+  var dd_element = getParentElementByClassName(element, "dropdown")
   if(checked)
-    on_dropdown_show(element)
+    on_dropdown_show(dd_element)
   else
-    on_dropdown_hide(element)
+    on_dropdown_hide(dd_element)
 }
 
 function on_dropdown_show(element) {
   var content = element.querySelector('.dd-content');
-  if (!element.querySelector(".dd-input").classList.contains("dd-always-expanded"))
+  if (!content.classList.contains("dd-layout-expand"))
     content.style.width = content.parentElement.offsetWidth + "px";
   content.hidden = false;
 }
@@ -20,7 +21,9 @@ function on_dropdown_hide(element) {
 
 ///
 function dd_hide(element) {
-  modules.dd_input.collapse(element)
+  var ddinput = element.querySelector(".dd-input")
+  if(modules.dd_input.getChecked(ddinput))
+    modules.dd_input.collapse(ddinput)
 }
 
 
@@ -158,7 +161,7 @@ function init() {
   dropdowns = document.getElementsByClassName("dropdown")
   var i;
   for(i = 0; i < dropdowns.length; i++)
-    modules.dd_input.addObserver(dropdowns[i], input_observer)
+    modules.dd_input.addObserver(dropdowns[i].querySelector(".dd-input"), input_observer)
 }
 
 window.addEventListener("load", init)

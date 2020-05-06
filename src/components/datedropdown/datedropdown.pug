@@ -3,7 +3,7 @@
   opt.dates         [date_start, date_fin]
   opt.captions      [cap_start, cap_fin]
 
-include ../components/_dd_input/dd_input
+include ../../components/_dd_input/dd_input
 
 mixin datedropdown(opt)
   -
@@ -14,31 +14,12 @@ mixin datedropdown(opt)
       if( typeof(opt.captions) != "undefined" && opt.captions.length == 2) captions = opt.captions
     }
   .datedropdown
+    .captioned
+      .h= captions[0]
+      +dd_input()
     if splitted
-      .date-splitted
-        +dd_input({title: captions[0]})
-        +dd_input({title: captions[1]})
-    else
-      .date-single
-        +_drop({title: captions[0]})
-    //input.datepicker-here
-    //.expand.datepicker-here(data-range="true" data-clearbutton="true" data-applybutton="true")
+      .captioned
+        .h= captions[1]
+        +dd_input()
+    input.picker.datepicker-here(disabled)
 
-
-//-
-  opt.title
-  opt.placeholder
-  opt.text
-mixin _drop(opt)
-  -
-    var title = "Date dropdown", placeholder = "ДД.ММ.ГГ", text
-    if (typeof(opt) == "object") {
-      typeof(opt.title) != "undefined" && (title = opt.title)
-      typeof(opt.placeholder) != "undefined" && (placeholder = opt.placeholder)
-      typeof(opt.title) != "undefined" && (title = opt.title)
-      typeof(opt.text) != "undefined" && (text = opt.text)
-    }
-  .title= title
-  .dd-input()
-    input.dd-input-text(value= text placeholder= placeholder)
-    .ico.dd-pic-collapsed

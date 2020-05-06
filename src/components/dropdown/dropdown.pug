@@ -4,6 +4,7 @@
     options.custom_title      str
     options.tip               str
     options.values            ([$rooms, $beds, $baths] or [$adult, $kids, $babies])
+    options.expanded          bool
     options.always_expanded   bool
     options.layout_expand     bool
     options.buttons_footer    bool
@@ -14,7 +15,7 @@ include ../_dd_input/dd_input
 mixin dropdown(options)
   -
     var title = "", type = "guests", text = "", tip, input_ro = true
-    var v = [0, 0, 0], placeholder, always_expanded = false, layout_expand = false
+    var v = [0, 0, 0], placeholder, expanded = false, always_expanded = false, layout_expand = false
     var buttons_footer = true
 
     if(typeof(options) == 'object') {
@@ -25,6 +26,7 @@ mixin dropdown(options)
       typeof(options.always_expanded) != "undefined" && (always_expanded = options.always_expanded)
       typeof(options.layout_expand) != "undefined" && (layout_expand = options.layout_expand)
       typeof(options.buttons_footer) != "undefined" && (buttons_footer = options.buttons_footer)
+      typeof(options.expanded) != "undefined" && (expanded = options.expanded)
 
     }
     if (type != "rooms") type = "guests"
@@ -35,12 +37,13 @@ mixin dropdown(options)
       placeholder = "Комнаты"
       if(title == "") title = "Удобства номера"
     }
+    if(always_expanded) expanded = true
   .dropdown
     .caption
       .h= title
       .tip= tip
-    +dd_input({always_checked: always_expanded, text: text, placeholder: placeholder, input_ro: input_ro})
-    .dd-content(class= type + (always_expanded ? " dd-content-a-expanded" : "") + (layout_expand ? " dd-layout-expand" : "") hidden= !always_expanded)
+    +dd_input({always_checked: always_expanded, checked: expanded, text: text, placeholder: placeholder, input_ro: input_ro})
+    .dd-content(class= type + (always_expanded ? " dd-content-a-expanded" : "") + (layout_expand ? " dd-layout-expand" : "") hidden= !expanded)
       if(type != "guests") 
         +_row({text: "Спальни", val: v[0]})
         +_row({text: "Кровати", val: v[1]})

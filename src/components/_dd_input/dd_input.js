@@ -7,31 +7,29 @@ window.modules.dd_input = {
 }
 
 /// public impl
-function collapse(parentElement){
-  var input_element = parentElement.querySelector(".dd-input")
-  dropdown_collapse(input_element)
+function collapse(element /*dd-input*/){
+  dropdown_collapse(element)
 }
 
-function getChecked(parentElement) {
-  return parentElement.querySelector(".dd-checked").checked  
+function getChecked(element /*dd-input*/) {  
+  return element.nextSibling.checked
 }
 
 
 /* functional observer yet
   function observer(element, checked:bool) {}
 */
-function addObserver(parentElement, observer) {
-  var element = parentElement.querySelector(".dd-input");
+function addObserver(element /*dd-input*/, observer) {
   if(element.observers === undefined)
     element.observers = []
-  element.observers[element.observers.length] = [observer, parentElement]
+  element.observers[element.observers.length] = observer
 }
 
 function notify(element /*dd-input*/, checked) {
   var obs = element.observers === undefined ? [] : element.observers
   
   for(i = 0; i < obs.length; i++) {
-    obs[i][0](obs[i][1], checked)
+    obs[i](element, checked)
   }
 }
 
@@ -97,8 +95,8 @@ function attachHandlers() {
   inputs = document.getElementsByClassName("dd-input");
   var i;
   for(i = 0; i < inputs.length; i++) {
-    //inputs[i].addEventListener('click', onclick_handler)
-    inputs[i].onclick = onclick_handler
+    inputs[i].addEventListener('click', onclick_handler)
+    //inputs[i].onclick = onclick_handler
     inputs[i].onkeydown = keyboard_handler
   }
 

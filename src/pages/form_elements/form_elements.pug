@@ -4,7 +4,6 @@ include ../../components/button/button
 include ../../components/textbox/textbox
 include ../../components/dropdown/dropdown
 include ../../components/datedropdown/datedropdown
-include ../../components/_dd_input/dd_input
 
 doctype html
 html(lang="en")
@@ -24,10 +23,11 @@ html(lang="en")
         +textbox({title: "text field", tip: "hover / focus",  text: "This is pretty awesome", ishovered: true})
         +dropdown({custom_title: "dropdown", tip: "default"})
         +textbox({title: "masked text field", tip: "default",  text: "", mask: "date"})
-        +dropdown({type: "rooms", layout_expand: true, buttons_footer: false})
+        +dropdown({type: "rooms", layout_expand: true, expanded: true, buttons_footer: false})
         +button
       .grid-b
-        +button({text: "grid-b"})
-        +dd_input
+        //+button({text: "grid-b"})
+        +datedropdown
+        +datedropdown
       .grid-c
         +button({text: "grid-c"})

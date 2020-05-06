@@ -1,6 +1,6 @@
 function getParentElementByClassName(element, className) {
   var i_el = element
-  while (i_el.tagName != "BODY") {
+  while (i_el != null && i_el.tagName !== undefined &&  i_el.tagName != "BODY") {
     if(i_el.classList.contains(className)) return i_el;
     i_el = i_el.parentElement;
   }
