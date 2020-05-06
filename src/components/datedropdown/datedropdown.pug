@@ -3,6 +3,8 @@
   opt.dates         [date_start, date_fin]
   opt.captions      [cap_start, cap_fin]
 
+include ../components/_dd_input/dd_input
+
 mixin datedropdown(opt)
   -
     var splitted = false, dates = [], captions = ["Прибытие", "Выезд"] 
@@ -14,8 +16,8 @@ mixin datedropdown(opt)
   .datedropdown
     if splitted
       .date-splitted
-        +_drop({title: captions[0]})
-        +_drop({title: captions[1]})
+        +dd_input({title: captions[0]})
+        +dd_input({title: captions[1]})
     else
       .date-single
         +_drop({title: captions[0]})

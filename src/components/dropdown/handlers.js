@@ -33,18 +33,29 @@ function getType(element /*dropdown*/) {
   return type
 }
 
+function isButtonsFooter(element) {
+  if(element.querySelector(".footer-row") != null) return true;
+  return false;
+}
+
 function increase(element /* dd-row */) {
   var num_element = element.querySelector(".dd-row-num")
   var v = parseInt(num_element.innerHTML)
   num_element.innerHTML = v<100 ? v + 1 : 100 
-  show_clear_butt(getParentElementByClassName(element, "dropdown"))
+  on_change_numbers(getParentElementByClassName(element, "dropdown"))
 }
 
 function decrease(element /* dd-row */) {
   var num_element = element.querySelector(".dd-row-num")
   var v = parseInt(num_element.innerHTML)
   num_element.innerHTML = v>0 ? v - 1 : 0 
-  show_clear_butt(getParentElementByClassName(element, "dropdown"))
+  on_change_numbers(getParentElementByClassName(element, "dropdown"))
+}
+
+function on_change_numbers(element /*dropdown*/) {
+  show_clear_butt(element)
+  if (!isButtonsFooter(element))
+    apply_dd(element)
 }
 
 function clear_all(element /*dropdown*/) {
@@ -55,11 +66,13 @@ function clear_all(element /*dropdown*/) {
   for(i = 0; i < num_elements.length; i++) 
     num_elements[i].querySelector(".dd-row-num").innerHTML = 0
   show_clear_butt(element)
+  apply_dd(element)
+
 }
 
 function apply_dd(element /*dropdown*/) {
   var input = element.getElementsByClassName("dd-input-text")[0]
-  dd_hide(element)
+  //dd_hide(element)
 
   var type = getType(element), val
   var arr  = getQuantityArray(element)
@@ -93,9 +106,8 @@ function on_globalclick(e) {
   var i;
   for(i = 0; i < dropdowns.length; i++) {
     if (dropdowns[i] != current_dd) {
-      dd_hide(dropdowns[i])
-      if (getType(dropdowns[i]) == "rooms")
-        apply_dd(dropdowns[i])
+      if (!(dropdowns[i].querySelector(".dd-content").classList.contains("dd-layout-expand")))
+        dd_hide(dropdowns[i])
     }
   }
 }

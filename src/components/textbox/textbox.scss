@@ -47,6 +47,7 @@
     display: flex;
     text-transform: uppercase;
     margin-bottom: 5px;
+    overflow: hidden;
     @include font-h3();
     .h {
     }
