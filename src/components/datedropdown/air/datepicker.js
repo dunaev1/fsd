@@ -83,6 +83,7 @@
             onChangeView: '',
             onRenderCell: '',
             onApply: '',
+            onClear: '',
         },
         hotKeys = {
             'ctrlRight': [17, 39],
@@ -597,6 +598,10 @@
             this._setInputValue();
             if (this.opts.onSelect) {
                 this._triggerOnChange()
+            }
+            var onClear = this.opts.onClear
+            if (onClear) {
+              onClear(this)
             }
         },
 
@@ -1914,6 +1919,7 @@
         
         _addSpacer: function () {
             var html = dp.template(spacer, {});
+            if ($('.datepicker--spacer', this.$buttonsContainer).length) return;
             this.$buttonsContainer.append(html);
         },
 

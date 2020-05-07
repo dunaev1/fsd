@@ -2,20 +2,21 @@
 @import "../../common/fonts.scss";
 
 .datedropdown {
-  
-  .caption {
-    display: flex;
-    @include font-h3();    
-    padding-bottom: 5px;
-    overflow: hidden;
-    .h {
-    }
 
-    .tip {
-      flex-grow: 1;
-      font-weight: normal;
-      color: var(--c_dark50);
-      text-align: right;
+  margin-bottom: 20px;
+
+  .dd-container {
+    display: flex;
+    flex-flow: row;
+
+    .spacer {
+      width: 20px;
+      flex-shrink: 0;
+    }
+    .h {
+      color: var(--c_dark100);
+      @include font-h3();    
+      padding-bottom: 5px;
     }
   }
 

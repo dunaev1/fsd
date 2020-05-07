@@ -4,6 +4,7 @@ window.modules.dd_input = {
   collapse: collapse,
   getChecked: getChecked,
   addObserver: addObserver,
+  setText: setText,
 }
 
 /// public impl
@@ -15,6 +16,9 @@ function getChecked(element /*dd-input*/) {
   return element.nextSibling.checked
 }
 
+function setText(element, text) {
+  element.querySelector(".dd-input-text").value = text
+}
 
 /* functional observer yet
   function observer(element, checked:bool) {}
@@ -24,6 +28,8 @@ function addObserver(element /*dd-input*/, observer) {
     element.observers = []
   element.observers[element.observers.length] = observer
 }
+
+
 
 function notify(element /*dd-input*/, checked) {
   var obs = element.observers === undefined ? [] : element.observers

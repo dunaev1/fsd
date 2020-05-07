@@ -7,19 +7,25 @@ include ../../components/_dd_input/dd_input
 
 mixin datedropdown(opt)
   -
-    var splitted = false, dates = [], captions = ["Прибытие", "Выезд"] 
+    var splitted = false, dates = ["", ""], captions = ["Прибытие", "Выезд"]
+    var placeholder = ""
     if (typeof(opt) == "object") {
       typeof(opt.splitted) != "undefined" && (splitted = opt.splitted)
       if( typeof(opt.dates) != "undefined" && opt.dates.length == 2) dates = opt.dates
       if( typeof(opt.captions) != "undefined" && opt.captions.length == 2) captions = opt.captions
     }
-  .datedropdown
-    .captioned
-      .h= captions[0]
-      +dd_input()
-    if splitted
+    if (splitted) {
+      placeholder = "ДД.ММ.ГГГГ"
+    }
+  .datedropdown(sdate= dates[0] edate= dates[1])
+    .dd-container
       .captioned
-        .h= captions[1]
-        +dd_input()
-    input.picker.datepicker-here(disabled)
+        .h= captions[0]
+        +dd_input({placeholder: placeholder})
+      if splitted
+        .spacer
+        .captioned
+          .h= captions[1]
+          +dd_input({placeholder: placeholder})
+    input.picker.datepicker-here(data-range="true" disabled)
 
