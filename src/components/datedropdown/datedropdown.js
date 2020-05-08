@@ -108,7 +108,7 @@ function init() {
     var dates = [datedropdowns[i].getAttribute("sdate"),
                  datedropdowns[i].getAttribute("edate")]
     for(j = 0; j < 2; j++)
-      if(dates[i] != "") dates[i] = new Date(dates[i])
+      if(dates[j] != "") dates[j] = new Date(dates[j])
 
     fillDates(datedropdowns[i], dates)
   }

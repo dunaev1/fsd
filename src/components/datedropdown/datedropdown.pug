@@ -7,7 +7,7 @@ include ../../components/_dd_input/dd_input
 
 mixin datedropdown(opt)
   -
-    var splitted = false, dates = ["", ""], captions = ["Прибытие", "Выезд"]
+    var splitted = false, dates = ["", ""], captions = ["Date dropdown", "Date dropdown"]
     var placeholder = ""
     if (typeof(opt) == "object") {
       typeof(opt.splitted) != "undefined" && (splitted = opt.splitted)

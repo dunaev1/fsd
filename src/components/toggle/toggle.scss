@@ -7,7 +7,7 @@
   color: var(--c_dark75);
 
   padding-left: 50px;
-
+  padding-bottom: 10px;
   input {
     position: absolute;
     width: 0;
@@ -17,7 +17,7 @@
 
   .checkmark {
     position: absolute;
-    top: 0;
+    top: 3px;
     left: 0;
     width: 40px;
     height: 20px;

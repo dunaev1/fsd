@@ -1,9 +1,14 @@
 
-include ../../components/logo/logo
 include ../../components/button/button
-include ../../components/textbox/textbox
-include ../../components/dropdown/dropdown
+include ../../components/checkbox/checkbox
 include ../../components/datedropdown/datedropdown
+include ../../components/dropdown/dropdown
+include ../../components/likebutton/likebutton
+include ../../components/logo/logo
+include ../../components/radiogroup/radiogroup
+include ../../components/ratebutton/ratebutton
+include ../../components/textbox/textbox
+include ../../components/toggle/toggle
 
 doctype html
 html(lang="en")
@@ -24,10 +29,33 @@ html(lang="en")
         +dropdown({custom_title: "dropdown", tip: "default"})
         +textbox({title: "masked text field", tip: "default",  text: "", mask: "date"})
         +dropdown({type: "rooms", layout_expand: true, expanded: true, buttons_footer: false})
-        +button
+        .datedropdown-container1
+          +datedropdown({splitted: true, dates: ["", "2019-08-19"]})
+        .datedropdown-container2
+          +datedropdown({dates: ["2019-08-19", "2019-08-23"], captions: ["Filter date dropdown"]})
+        +textbox({title: "Subscription text field", placeholder: "Email", arrow_button: true})
       .grid-b
-        //+button({text: "grid-b"})
-        +datedropdown
-        +datedropdown({splitted: true, dates: ["", "2020-01-19"]})
+        .checkbox-buttons
+          .h3= "Checkbox buttons"
+          +checkbox({text: "Можно курить"})
+          +checkbox({text: "Можно с питомцами", checked: true})
+          +checkbox({text: "Можно пригласить гостей\n(до 10 человек)", checked: true})
+        .radiobuttons
+          .h3= "Radio buttons"
+          +radiogroup({labels: ["Мужчина", "Женщина"]})
+        .togglegroup
+          .h3= "Toggle"
+          +toggle({text: "Получать спецпредложения", on: true})
+          +toggle({text: "Получать спецпредложения"})
+        .likebuttongroup
+          .h3= "Like button"
+          .sub
+            +likebutton({value: 2})
+            +likebutton({value: 12, checked: true})
+        .ratebuttongroup
+          .h3= "Rate button"
+          .sub
+            +ratebutton({stars: 4})
+            +ratebutton({stars: 5})
       .grid-c
         +button({text: "grid-c"})
