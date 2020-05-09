@@ -7,8 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  &:hover, &:focus {
+  
+  cursor: pointer;
+  &:hover, &:focus, &.hovered {
     opacity: 0.5;
   }
 }
@@ -18,6 +19,7 @@
   @include button-common;
   color: var(--c_dark50);
   background: #fff;
+  display: inline;
 }
 
 .button-default {
@@ -25,6 +27,7 @@
   @include button-common;
   color: var(--c_purple);
   background: #fff;
+  display: inline;
 }
 
 .button-bordered {
@@ -35,22 +38,22 @@
   
   background: #fff;
   border: 2px solid var(--c_purple);
-
   border-radius: 22px;
-  
+  width: 100%;
 }
 
 .button-filled {
-  display: flex;
   @include font-h3;
   @include button-common;
   color: #fff;
   
   background: linear-gradient(180deg, var(--c_purple) 0, var(--c_purple_grad) 100%);
   border-radius: 22px;
- 
+  width: 100%;
+  height: 100%;
   .button-text {
     position: absolute;
+    width: max-content;
   }
   .spacer {
     flex-grow: 1;

@@ -3,8 +3,10 @@ include ../../components/button/button
 include ../../components/checkbox/checkbox
 include ../../components/datedropdown/datedropdown
 include ../../components/dropdown/dropdown
+include ../../components/checkboxlist/checkboxlist
 include ../../components/likebutton/likebutton
 include ../../components/logo/logo
+include ../../components/pagination/pagination
 include ../../components/radiogroup/radiogroup
 include ../../components/ratebutton/ratebutton
 include ../../components/textbox/textbox
@@ -22,40 +24,96 @@ html(lang="en")
     .form-elements
       .logo-container
         +logo
-      .grid-a
-        //+button({text: "grid-a"})
-        +textbox({title: "text field", tip: "default", placeholder: "Email",})
-        +textbox({title: "text field", tip: "hover / focus",  text: "This is pretty awesome", ishovered: true})
-        +dropdown({custom_title: "dropdown", tip: "default"})
-        +textbox({title: "masked text field", tip: "default",  text: "", mask: "date"})
-        +dropdown({type: "rooms", layout_expand: true, expanded: true, buttons_footer: false})
-        .datedropdown-container1
-          +datedropdown({splitted: true, dates: ["", "2019-08-19"]})
-        .datedropdown-container2
-          +datedropdown({dates: ["2019-08-19", "2019-08-23"], captions: ["Filter date dropdown"]})
-        +textbox({title: "Subscription text field", placeholder: "Email", arrow_button: true})
-      .grid-b
-        .checkbox-buttons
-          .h3= "Checkbox buttons"
-          +checkbox({text: "Можно курить"})
-          +checkbox({text: "Можно с питомцами", checked: true})
-          +checkbox({text: "Можно пригласить гостей\n(до 10 человек)", checked: true})
-        .radiobuttons
-          .h3= "Radio buttons"
-          +radiogroup({labels: ["Мужчина", "Женщина"]})
-        .togglegroup
-          .h3= "Toggle"
-          +toggle({text: "Получать спецпредложения", on: true})
-          +toggle({text: "Получать спецпредложения"})
-        .likebuttongroup
-          .h3= "Like button"
-          .sub
-            +likebutton({value: 2})
-            +likebutton({value: 12, checked: true})
-        .ratebuttongroup
-          .h3= "Rate button"
-          .sub
-            +ratebutton({stars: 4})
-            +ratebutton({stars: 5})
-      .grid-c
-        +button({text: "grid-c"})
+      .margin
+      .main-container
+        .grid-a1
+          +textbox({title: "text field", tip: "default", placeholder: "Email",})
+          +textbox({title: "text field", tip: "hover / focus",  text: "This is pretty awesome", ishovered: true})
+          .guest-container
+            +dropdown({custom_title: "dropdown", tip: "default"})
+          .masked-container
+            +textbox({title: "masked text field", tip: "default",  text: "", mask: "date"})
+          .datedropdown-container1
+            +datedropdown({splitted: true, dates: ["", "2019-08-19"]})
+          .datedropdown-container2
+            +datedropdown({dates: ["2019-08-19", "2019-08-23"], captions: ["Filter date dropdown", ""]})
+          .subscript-container
+            +textbox({title: "Subscription text field", placeholder: "Email", arrow_button: true})
+        .grid-1m
+        .grid-a2
+          .checkbox-buttons
+            .h3= "Checkbox buttons"
+            +checkbox({text: "Можно курить"})
+            +checkbox({text: "Можно с питомцами", checked: true})
+            +checkbox({text: "Можно пригласить гостей\n(до 10 человек)", checked: true})
+          .radiobuttons
+            .h3= "Radio buttons"
+            +radiogroup({labels: ["Мужчина", "Женщина"]})
+          .togglegroup
+            .h3= "Toggle"
+            +toggle({text: "Получать спецпредложения", on: true})
+            +toggle({text: "Получать спецпредложения"})
+          .likebuttongroup
+            .h3= "Like button"
+            .sub
+              +likebutton({value: 2})
+              +likebutton({value: 12, checked: true})
+          .ratebuttongroup
+            .h3= "Rate button"
+            .sub
+              +ratebutton({stars: 4})
+              +ratebutton({stars: 5})
+        .grid-2m
+        .grid-a3
+          .slider-container
+            .h3= "Range slider"
+          .button-container
+            .h3= "Buttons"
+            .sub
+              span.button-box
+                +button({text: "click me", type: "filled"})
+              .button-box
+                +button({text: "click me", type: "filled", ishover: true})
+            .sub
+              .button-box
+                +button({text: "click me", type: "bordered"})
+              .button-box
+                +button({text: "click me", type: "bordered", ishover: true})
+            .sub-textbutt
+              span.textbutton
+                +button({text: "click me", type: "text-default"})
+              span
+                +button({text: "click me", type: "text"})
+            .pay-butt
+              +button({text: "Перейти к оплате", type: "pay"})
+            .h3= "Pagination"
+            .pagination-container
+              +pagination
+        .grid-b1
+            
+          +dropdown({type: "rooms", custom_title: "Dropdown", layout_expand: true, buttons_footer: false, values: [2, 2, 0], tip: "Default"})
+          +dropdown({type: "rooms", custom_title: "Dropdown", layout_expand: true, buttons_footer: false, values: [2, 2, 0], tip: "Expanded", 
+                     expanded: true, ishover: true})
+        .grid-1m
+        .grid-b2
+          +dropdown({type: "guests", custom_title: "Dropdown", layout_expand: true, buttons_footer: true, values: [0, 0, 0],
+                     expanded: true, ishover: true})
+        .grid-2m
+        .grid-b3
+          +dropdown({type: "guests", custom_title: "Dropdown", layout_expand: true, buttons_footer: true, values: [2, 1, 0],
+                     expanded: true, ishover: true})
+        .grid-c1
+          .list-container 
+            +checkboxlist({title: "Expandable checkbox list", expanded: false, content:
+                           [["Завтрак", false], ["Письменный стол", true], ["Стул для кормления", true], 
+                            ["Кроватка", true], ["Телевизор", false], ["Шампунь", false]]})          
+          .list-container 
+            +checkboxlist({title: "Expandable checkbox list", expanded: true, content:
+                           [["Завтрак", false], ["Письменный стол", true], ["Стул для кормления", true], 
+                            ["Кроватка", true], ["Телевизор", false], ["Шампунь", false]]})          
+        .grid-1m
+        .grid-c2
+        .grid-2m
+        .grid-c3
+      .margin
+

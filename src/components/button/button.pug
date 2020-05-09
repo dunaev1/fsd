@@ -3,17 +3,21 @@
   options.text
   options.url       
   options.classes     str // additional classes
+  options.ishover   bool
 include ./ico_arrow
 
 mixin button(options)
   -
-    var type = "text", text = "Ok", url = "/urls/empty", classes = ""
+    var type = "text", text = "Ok", url = false, classes = "", ishover = false;
     if(typeof(options) != "undefined") {
       typeof(options.type) != "undefined" && (type = options.type)
       typeof(options.text) != "undefined" && (text = options.text)
       typeof(options.url) != "undefined" && (url = options.url);
       typeof(options.classes) != "undefined" && (classes = options.classes);
+      typeof(options.ishover) != "undefined" && (ishover = options.ishover);
     }
+    if (ishover)
+      classes += " hovered"
   case type
     when "bordered"
       a.button-bordered(class= classes href= url)= text

@@ -2,6 +2,7 @@
 
 .radiogroup {
   display: flex;
+  flex-flow: wrap;
 
   .radiobutton {
     position: relative;

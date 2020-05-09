@@ -6,19 +6,22 @@
   opt.placeholder         str
   opt.text                str
   opt.input_ro            bool
+  opt.ishover             bool
 
 mixin dd_input(opt)
   -
-    var placeholder, input_ro = true, text, always_checked, checked = false
+    var placeholder, input_ro = true, text, always_checked, checked = false, ishover = false
     if (typeof(opt) == "object") {
       typeof(opt.text) != "undefined" && (text = opt.text)
       typeof(opt.placeholder) != "undefined" && (placeholder = opt.placeholder)
       typeof(opt.input_ro) != "undefined" && (input_ro = opt.input_ro)
       typeof(opt.always_checked) != "undefined" && (always_checked = opt.always_checked)
       typeof(opt.checked) != "undefined" && (checked = opt.checked)
+      typeof(opt.ishover) != "undefined" && (ishover = opt.ishover)
     }
     if(always_checked) checked = true
-  .dd-input(class= (checked ? "input-border-expanded" : "input-border") + (always_checked ? " dd-always-expanded" : ""))
+  .dd-input(class= (checked ? "input-border-expanded" : "input-border") + (always_checked ? " dd-always-expanded" : "") +
+                   (ishover ? " hovered" : ""))
     input.dd-input-text(value= text readonly= input_ro placeholder= placeholder)
     .ico(class = (checked ? "dd-pic-expanded" : "dd-pic-collapsed") tabindex="0")
   //- 

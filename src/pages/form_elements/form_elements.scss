@@ -7,61 +7,145 @@
     left: 30px;
   }
 
-  display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: auto 50% auto;
-  grid-gap: 100px;
-
-  padding: 143px 0 0 141px;
+  padding-top: 143px;
+  display: flex;
   
-  .h3 {
-    @include font-h3();
-    padding-bottom: 16px;
-    color: var(--c_dark100);
+  .margin {
+    //width: 141px;
+    width: 50%;
+    flex-shrink: 100;
   }
-
-  .grid-a {
+  .main-container {
+    flex-shrink: 1;
+    display: grid;
     
-    justify-content: left; 
-  }
+    max-width: 1158px;
+    width: 100%;
 
-  .grid-b {
-    .checkbox-buttons {
-      padding-bottom: 29px;
-      .h3 {
-        padding-bottom: 18px;
+    grid-template-rows: 733px 307px 300px;
+    grid-template-columns: 27.6% 4.7% 27.6% 0.1% auto;
+    grid-column-gap: 3.1%;
+
+    
+    .h3 {
+      @include font-h3();
+      padding-bottom: 16px;
+      color: var(--c_dark100);
+    }
+
+    // margin items
+    .grid-1m {
+    }
+    .grid-2m {
+    }
+
+    .grid-a1 {
+      
+      justify-content: left;
+      .guest-container {
+        margin-bottom: 3px;
+      }
+      .masked-container {
+        margin-bottom: 21px;
+      }
+      .datedropdown-container1 {
+        margin-bottom: 20px;
+      }
+      .datedropdown-container2 {
+        margin-bottom: 21px;
+        width: 83%;
+      }
+      .subscript-container {
+        width: 83%;
       }
     }
-    .radiobuttons {
-      padding-bottom: 40px;
-      .h3 {
-        padding-bottom: 13px;
+    
+
+    .grid-a2 {
+      .checkbox-buttons {
+        padding-bottom: 29px;
+        .h3 {
+          padding-bottom: 18px;
+        }
+      }
+      .radiobuttons {
+        padding-bottom: 40px;
+        .h3 {
+          padding-bottom: 13px;
+        }
+      }
+      .togglegroup {
+        padding-bottom: 33px;
+        .h3 {
+          padding-bottom: 13px;
+        }
+      }
+      .likebuttongroup {
+        padding-bottom: 40px;
+        .h3 {
+          padding-bottom: 16px;
+        }
+        .sub {
+          display: flex;
+          flex-flow: row;
+        }
+      }
+      .ratebuttongroup {
+        padding-bottom: 33px;
+        .h3 {
+          padding-bottom: 16px;
+        }
+        .sub {
+          display: flex;
+          flex-flow: row wrap;
+        }
       }
     }
-    .togglegroup {
-      padding-bottom: 33px;
-      .h3 {
-        padding-bottom: 13px;
+    .grid-a3 {
+      .slider-container {
+        padding-bottom: 57px;
+        .h3 {
+          
+        }
+      }
+      .button-container {
+        padding-bottom: 40px;
+        .h3 {
+          padding-bottom: 16px;
+        }
+        .sub {
+          display: flex;
+        
+          .button-box {
+            display: flex;
+            width: 100px;
+            height: 44px;
+            margin: 0 18px 30px 0px;
+          }
+        }
+        .sub-textbutt {
+          padding-bottom: 28px;
+          .textbutton {
+            padding-right: 22px;
+          }
+        }
+        .pay-butt {
+          max-width: 320px;
+          height: 44px;
+          margin-bottom: 40px;
+        }
+        .pagination-container {
+          display: flex;
+        }
       }
     }
-    .likebuttongroup {
-      padding-bottom: 40px;
-      .h3 {
-        padding-bottom: 16px;
-      }
-      .sub {
-        display: flex;
-        flex-flow: row;
-      }
+    .grid-b1 {
+      width: 83%;
     }
-    .ratebuttongroup {
-      padding-bottom: 33px;
-      .h3 {
-        padding-bottom: 16px;
-      }
-      .sub {
-        display: flex;
-        flex-flow: row;
+    .grid-c1 {
+      width: 83%;
+      .list-container {
+        margin-bottom: 20px;
       }
     }
   }

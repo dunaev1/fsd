@@ -4,17 +4,17 @@
 .datedropdown {
 
   padding-bottom: 20px;
-
+  overflow: hidden;
+  
   .dd-container {
     display: flex;
-    flex-flow: row;
 
     .spacer {
       width: 20px;
       flex-shrink: 0;
     }
     .captioned {
-      width: 100%;
+      width: 100%;      
     }
 
     .h {

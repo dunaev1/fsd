@@ -79,8 +79,9 @@ function apply_dd(element /*dropdown*/) {
 
   var type = getType(element), val
   var arr  = getQuantityArray(element)
-  if(type == "guests") val = arr[0] + arr[1] + arr[2] + " гостя"
-  else if(type == "rooms") val = arr[0] + " спальни, " + arr[1] + " кровати, " + arr[2] + " туалeта"
+  var sum = arr[0] + arr[1] + arr[2]
+  if(type == "guests") val = sum ? sum + " гостя" : ""
+  else if(type == "rooms") val = arr[0] + " спальни, " + arr[1] + " кровати..." // + arr[2] + " туалeта"
   input.value = val  
 }
 
@@ -160,8 +161,11 @@ function init() {
   // obsersers
   dropdowns = document.getElementsByClassName("dropdown")
   var i;
-  for(i = 0; i < dropdowns.length; i++)
+  for(i = 0; i < dropdowns.length; i++) {
+    apply_dd(dropdowns[i])
+    show_clear_butt(dropdowns[i])
     modules.dd_input.addObserver(dropdowns[i].querySelector(".dd-input"), input_observer)
+  }
 }
 
 window.addEventListener("load", init)

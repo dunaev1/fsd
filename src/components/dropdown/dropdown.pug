@@ -8,6 +8,7 @@
     options.always_expanded   bool
     options.layout_expand     bool
     options.buttons_footer    bool
+    options.ishover           bool
 
 include ../button/button
 include ../_dd_input/dd_input
@@ -16,7 +17,7 @@ mixin dropdown(options)
   -
     var title = "", type = "guests", text = "", tip, input_ro = true
     var v = [0, 0, 0], placeholder, expanded = false, always_expanded = false, layout_expand = false
-    var buttons_footer = true
+    var buttons_footer = true, ishover = false
 
     if(typeof(options) == 'object') {
       typeof(options.type) != 'undefined' && (type = options.type)
@@ -27,6 +28,7 @@ mixin dropdown(options)
       typeof(options.layout_expand) != "undefined" && (layout_expand = options.layout_expand)
       typeof(options.buttons_footer) != "undefined" && (buttons_footer = options.buttons_footer)
       typeof(options.expanded) != "undefined" && (expanded = options.expanded)
+      typeof(options.ishover) != "undefined" && (ishover = options.ishover)
 
     }
     if (type != "rooms") type = "guests"
@@ -42,8 +44,12 @@ mixin dropdown(options)
     .caption
       .h= title
       .tip= tip
-    +dd_input({always_checked: always_expanded, checked: expanded, text: text, placeholder: placeholder, input_ro: input_ro})
-    .dd-content(class= type + (always_expanded ? " dd-content-a-expanded" : "") + (layout_expand ? " dd-layout-expand" : "") hidden= !expanded)
+    +dd_input({always_checked: always_expanded, checked: expanded, text: text, placeholder: placeholder, 
+               input_ro: input_ro, ishover: ishover})
+    .dd-content(class= type + (always_expanded ? " dd-content-a-expanded" : "") + 
+                       (layout_expand ? " dd-layout-expand" : "") + 
+                       (ishover ? " hovered" : "") hidden= !expanded)
+
       if(type != "guests") 
         +_row({text: "Спальни", val: v[0]})
         +_row({text: "Кровати", val: v[1]})
@@ -54,9 +60,9 @@ mixin dropdown(options)
         +_row({text: "Младенцы", val: v[2]})
       if buttons_footer   
         .footer-row
-          +button({text: "Очистить", classes: "dd-clear", url: "#"})
+          +button({text: "Очистить", classes: "dd-clear"})
           .spacer
-          +button({text: "Применить", type: "text-default", classes: "dd-apply", url:"#"})
+          +button({text: "Применить", type: "text-default", classes: "dd-apply"})
 
 
 //-

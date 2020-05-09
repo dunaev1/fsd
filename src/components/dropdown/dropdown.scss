@@ -44,7 +44,7 @@
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
-  
+    line-height: 15px; 
     box-shadow: 0px 10px 20px var(--c_dark05);
     overflow: hidden;
   }
@@ -54,7 +54,7 @@
     
   }
 
-  &:hover .dd-content {
+  &:hover .dd-content, .dd-content.hovered {
     border: 1px solid var(--c_dark50);
     border-top: 0;
   }
@@ -77,7 +77,7 @@
   .dd-row-mns, .dd-row-pls {
     width: 30px;
     height: 30px;
-    border: 1px solid var(--c_dark50);
+    border: 1px solid var(--c_dark25);
     border-radius: 22px;
     flex-grow: 0;
     display: flex;
@@ -89,7 +89,7 @@
   }
 
   .dd-row-mns:focus, .dd-row-pls:focus {
-    border-color: var(--c_dark75);
+    border-color: var(--c_dark50);
   }
 
   .dd-row-num {

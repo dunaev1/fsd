@@ -55,7 +55,7 @@
 
   }
 
-  &:hover .dd-input, .dd-input:focus-within {
+  &:hover .dd-input, .dd-input:focus-within, .hovered {
     border: 1px solid var(--c_dark50);
   }
  

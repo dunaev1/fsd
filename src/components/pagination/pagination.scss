@@ -1,10 +1,7 @@
 @import "../../common/fonts.scss";
 
 .pagination {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  flex-direction: column;
+  display: inline-block;
 
   @include font-body();
   color: var(--c_dark75);
@@ -16,10 +13,14 @@
     font-size: 12px;
     padding-bottom: 10px;
 
-    .button {
+    .nav-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 40px;
       height: 40px;
       color: var(--c_dark50);
+      text-decoration: none;
     }
 
     .arrow {
