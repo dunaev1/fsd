@@ -12,7 +12,7 @@ mixin checkbox(options)
       typeof(options.isrich) != "undefined" && (isrich = options.isrich)
     }
 
-  label.checkbox
+  label.checkbox(class = (isrich ? " rich" : ""))
     .textwrapper
       if isrich
         each val, i in texts

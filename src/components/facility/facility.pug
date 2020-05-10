@@ -14,13 +14,14 @@ mixin facility(opt)
       typeof(opt.body) != "undefined" && (body = opt.body)
     }
   .facility
-    case pic
-      when 1
-        +ico_city
-      when 2
-        +ico_hot
-      default
-        +ico_smile
+    .pic
+      case pic
+        when 1
+          +ico_city
+        when 2
+          +ico_hot
+        default
+          +ico_smile
     .content
       .header= header
       .body= body

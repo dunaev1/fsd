@@ -44,19 +44,28 @@ function isButtonsFooter(element) {
 function increase(element /* dd-row */) {
   var num_element = element.querySelector(".dd-row-num")
   var v = parseInt(num_element.innerHTML)
-  num_element.innerHTML = v<100 ? v + 1 : 100 
+  if(v < 100) v++
+  num_element.innerHTML = v
   on_change_numbers(getParentElementByClassName(element, "dropdown"))
 }
 
 function decrease(element /* dd-row */) {
   var num_element = element.querySelector(".dd-row-num")
   var v = parseInt(num_element.innerHTML)
-  num_element.innerHTML = v>0 ? v - 1 : 0 
+  if(v>0) v--
+  num_element.innerHTML = v 
   on_change_numbers(getParentElementByClassName(element, "dropdown"))
 }
 
+function enable_button(element /*dd-row-mns, dd-row-pls*/, enabled) {
+  if(!enabled)
+    element.classList.add("dd-butt-disabled")
+  else
+    element.classList.remove("dd-butt-disabled")
+}
+
 function on_change_numbers(element /*dropdown*/) {
-  show_clear_butt(element)
+  show_buttons(element)
   if (!isButtonsFooter(element))
     apply_dd(element)
 }
@@ -68,7 +77,7 @@ function clear_all(element /*dropdown*/) {
   var i
   for(i = 0; i < num_elements.length; i++) 
     num_elements[i].querySelector(".dd-row-num").innerHTML = 0
-  show_clear_butt(element)
+  show_buttons(element)
   apply_dd(element)
 
 }
@@ -96,11 +105,19 @@ function getQuantityArray(element /*dropdown*/) {
   return arr
 }
 
-function show_clear_butt(element /*dropdown*/) {
+function show_buttons(element /*dropdown*/) {
+  // clear button
   var arr = getQuantityArray(element)  
   var clear_elements = element.getElementsByClassName("dd-clear")
   if(clear_elements.length)  
     clear_elements[0].hidden = (arr[0] + arr[1] + arr[2] == 0)
+  // minus button
+  var i
+  var minus_buttons = element.querySelectorAll(".dd-row-mns")
+  for(var j = 0; j < minus_buttons.length; j++) {
+    var value = parseInt(minus_buttons[j].nextSibling.innerHTML) 
+    enable_button(minus_buttons[j], value)
+  }
 }
 
 
@@ -163,7 +180,8 @@ function init() {
   var i;
   for(i = 0; i < dropdowns.length; i++) {
     apply_dd(dropdowns[i])
-    show_clear_butt(dropdowns[i])
+    show_buttons(dropdowns[i])
+      
     modules.dd_input.addObserver(dropdowns[i].querySelector(".dd-input"), input_observer)
   }
 }

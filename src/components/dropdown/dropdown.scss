@@ -62,11 +62,13 @@
   
   .dd-row {
     display: flex;
-    padding: 3px 6px 3px 15px;
+    padding: 3px 6px 3px 14px;
     height: 37px;
   }
 
   .dd-txt {
+    position: relative;
+    top: -2px;
     flex-grow: 5;
     height: 30px;
     margin: 0;
@@ -86,6 +88,12 @@
     color: var(--c_dark50);
     outline: none;
     cursor: pointer;
+    
+    &.dd-butt-disabled {
+      border-color: var(--c_dark10);
+      color: var(--c_dark10);
+      cursor: default;
+    }
   }
 
   .dd-row-mns:focus, .dd-row-pls:focus {
@@ -93,6 +101,9 @@
   }
 
   .dd-row-num {
+    position: relative;
+    top: -2px;
+
     width: 32px;
     height: 30px;
     flex-grow: 0;
@@ -104,7 +115,7 @@
 
   .footer-row {
     display: flex;
-    padding: 15px 7px 7px 15px;
+    padding: 16px 6px 9px 13px;
 
     .spacer {
       flex-grow: 1;

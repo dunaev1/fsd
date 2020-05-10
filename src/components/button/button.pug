@@ -20,15 +20,15 @@ mixin button(options)
       classes += " hovered"
   case type
     when "bordered"
-      a.button-bordered(class= classes href= url)= text
+      a.button-bordered(tabindex="0" class= classes href= url)= text
     when "filled" 
-      a.button-filled(class= classes href= url)= text
+      a.button-filled(tabindex="0" class= classes href= url)= text
     when "pay"
-      a.button-filled(class= classes href= url)
+      a.button-filled(tabindex="0" class= classes href= url)
         .button-text= text
         .spacer
         +ico_arrow
     when "text"
-      a.button(class= classes href= url)= text
+      a.button(tabindex="0" class= classes href= url)= text
     default
-      a.button-default(class= classes href= url)= text
+      a.button-default(tabindex="0" class= classes href= url)= text

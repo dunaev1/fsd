@@ -22,8 +22,7 @@
     max-width: 1158px;
     width: 100%;
 
-    grid-template-rows: 733px 307px 300px;
-    grid-template-columns: 27.6% 4.7% 27.6% 0.1% auto;
+    grid-template-columns: 27.6% 4.7% 27.66% 0% auto;
     grid-column-gap: 3.1%;
 
     
@@ -40,7 +39,8 @@
     }
 
     .grid-a1 {
-      
+      padding-bottom: 80px;
+
       justify-content: left;
       .guest-container {
         margin-bottom: 3px;
@@ -88,6 +88,9 @@
         .sub {
           display: flex;
           flex-flow: row;
+        }
+        .likebutton-container {
+          margin-right: 10px;
         }
       }
       .ratebuttongroup {
@@ -140,13 +143,43 @@
       }
     }
     .grid-b1 {
+      padding-bottom: 20px;
       width: 83%;
     }
     .grid-c1 {
+      padding-bottom: 70px;
       width: 83%;
       .list-container {
         margin-bottom: 20px;
       }
+    }
+    .grid-c2 {
+      
+      .rich-container {
+        padding-top: 14px;
+        .h3 {
+          padding-bottom: 17px;
+        }
+      }
+    }
+    .grid-c3 {
+
+      .bullet-container {
+        max-width: 80%;
+        padding-top: 14px;
+        .h3 {
+          padding-bottom: 13px;
+        }
+      }
+    }
+
+    .grid-d1 {
+      padding-bottom: 100px;
+      width: 85%;
+    }
+    .grid-d2 {
+      grid-column: span 3;
+      padding-top: 10px;
     }
   }
 }

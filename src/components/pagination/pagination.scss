@@ -21,6 +21,7 @@
       height: 40px;
       color: var(--c_dark50);
       text-decoration: none;
+      outline: none;
     }
 
     .arrow {
@@ -28,7 +29,12 @@
       height: 40px;
       background: linear-gradient(180deg, var(--c_green) 0%, var(--c_green_grad) 100%);
       border-radius: 22px;
+      outline: none;
     }
+    .nav-button:focus, .arrow:focus {
+      opacity: 0.5;
+    }
+
     .pic {
     }
     .pageon {
