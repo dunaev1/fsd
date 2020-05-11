@@ -1,0 +1,51 @@
+//-
+
+include ../../components/button/button
+include ../../components/datedropdown/datedropdown
+include ../../components/dropdown/dropdown
+
+mixin roomrent(opt)
+  -
+  .roomrent
+    .desc-row
+      span.n= "№ "
+      span.number= "888 "  
+      span.lux-sign ЛЮКС
+
+      span.price= "9 990₽ "
+        em.per-period в сутки
+    
+    +datedropdown({dates: ["2019-08-19", "2019-08-23"], captions: ["Прибытие", "Выезд"], splitted: true})
+    .guest-cntr
+      +dropdown({custom_title: "Гости", values: [2, 1, 0]})
+    .details
+      +_detail_row({txt: ["9 990₽ х 4 суток", "39 960₽"]})
+      +_detail_row({txt: ["Сбор за услуги: скидка 2 179₽", "0₽"], isinfo: true})
+      +_detail_row({txt: ["Сбор за дополнительные услуги", "300₽"], isinfo: true})
+
+    .total
+      .txt Итого
+      .brd
+      .sum 38 081₽
+
+    .butt-cntr
+      +button({type: "pay", text: "Забронировать"})
+
+
+
+//-
+  opt.isinfo    bool
+  opt.txt       [str, str]
+
+mixin _detail_row(opt)
+  -
+    var txt = ["", ""], isinfo = false
+    if (typeof(opt) == "object") {
+      typeof(opt.isinfo) != "undefined" && (isinfo = opt.isinfo)
+      typeof(opt.txt) != "undefined" && (txt = opt.txt)
+    }
+  .detail-row
+    span.txt= txt[0]
+    if isinfo
+      span.info i
+    span.price= txt[1]

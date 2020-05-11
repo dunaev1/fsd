@@ -15,7 +15,11 @@
 
   .main-container {
     display: flex;
-    flex-flow: column;
+    flex-flow: column wrap;
+    height: 1100px;
     width: 1160px;
+    .card-cntr {
+      margin: 0 40px 40px 0;
+    }
   }
 }

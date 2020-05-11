@@ -1,8 +1,7 @@
 @import "../../common/fonts.scss";
 
 .regacc {
-  padding: 40px 29px 29px 29px;
-  margin: 0 40px 40px 0;
+  padding: 39px 29px 29px 29px;
   width: 380px;
   background: #fff;
   
@@ -10,13 +9,12 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  color: var(--c_dark100);
 
   .h1 {
-    font-family: Montserrat;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 30px;
-    padding-bottom: 14px;
+    @include font-cards-header();
+
+    padding-bottom: 15px;
   }
   .fam-cntr {
     margin-top: -15px;
@@ -34,6 +32,7 @@
     padding-bottom: 30px;
   }
   .enter-cntr {
+    padding-left: 1px;
     display: flex;
     .caption {
       display: flex;
@@ -41,6 +40,7 @@
       flex-grow: 1;
       
       @include font-body();
+      color: #000;
     }
     .butt-ent-cntr{
       display: flex;

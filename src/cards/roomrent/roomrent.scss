@@ -1,0 +1,108 @@
+@import "../../common/fonts.scss";
+
+.roomrent {
+  padding: 39px 29px 29px 29px;
+  width: 380px;
+  background: #fff;
+  
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  color: var(--c_dark100);
+
+  .desc-row {
+    padding-bottom: 20px;
+    .n {
+      font-family: Quicksand;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .number {
+      font-family: Quicksand;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .lux-sign {
+      flex-grow: 1;
+      font-family: Montserrat;
+      font-size: 12px;
+      font-weight: bold;
+      color: var(--c_purple);
+      text-transform: capitalize;
+      
+    }
+    .price {
+      float: right;
+      font-family: Montserrat;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 39px;
+      color: var(--c_dark50);
+    }
+    .per-period {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+    }
+  }
+  .guest-cntr {
+    padding-bottom: 2px;
+  }
+  .detail-row {
+    padding: 0px 0px 15px 1px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: var(--c_dark75);
+    
+    .txt {
+      display: inline-block;
+      width: 219px;
+    }
+
+    .info {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 18px;
+      vertical-align: top;
+
+      color: var(--c_dark25);
+
+      border: 1px solid var(--c_dark25);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .price {
+      float: right;
+    }
+  }
+  .details {
+    padding-bottom: 14px;
+  }
+  .total {
+    display: flex;
+
+    padding: 0 0 20px 1px;
+    font-family: Opensans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    .brd {
+      width: 100%;
+      border-bottom: 1px dotted var(--c_dark25);
+      margin: 5px;
+
+    }
+    .sum {
+      font-family: Quicksand;
+      flex-shrink: 0;
+    }
+  }
+
+}

@@ -1,6 +1,7 @@
 include ../../components/logo/logo
 include ../../cards/findroom/findroom
 include ../../cards/regacc/regacc
+include ../../cards/roomrent/roomrent
 
 doctype html
 html(lang="en")
@@ -8,13 +9,19 @@ html(lang="en")
     meta(charset="UTF-8")
     title Cards
     link(rel="stylesheet" type="text/css" href="main.css")    
+    script(src="jquery.min.js")
+    script(src="main.bundle.js")
   body
     .page-cards
       .logo-container
         +logo
       .margin
       .main-container
-        +findroom
-        +regacc
+        .card-cntr
+          +findroom
+        .card-cntr
+          +regacc
+        .card-cntr
+          +roomrent
       .margin
  

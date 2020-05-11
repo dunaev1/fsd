@@ -45,6 +45,12 @@ h3 {
        url('fonts/fuck.woff') format('woff') ;
 }
 
+@font-face {
+  font-family: Opensans;
+  font-weight: bold;
+  src: url('fonts/OpenSans-Bold.ttf') format('truetype'),
+       url('fonts/fuck.woff') format('woff') ;
+}
 
 [hidden] {
   display: none;
