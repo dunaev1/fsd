@@ -1,0 +1,14 @@
+//-
+
+include ../../components/button/button
+include ../../components/datedropdown/datedropdown
+include ../../components/dropdown/dropdown
+
+mixin findroom(opt)
+  -
+  .findroom
+    .h1 Найдем номера под ваши пожелания
+    +datedropdown({splitted: true, captions: ["Прибытие", "Выезд"],})
+    +dropdown({custom_title: "Гости",})
+    .butt-cntr
+      +button({type: "pay", text: "Подобрать номер"})

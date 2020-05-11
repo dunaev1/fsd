@@ -1,0 +1,29 @@
+//-
+
+include ../../components/button/button
+include ../../components/radiogroup/radiogroup
+include ../../components/textbox/textbox
+include ../../components/toggle/toggle
+
+mixin regacc(opt)
+  -
+  .regacc
+    .h1 Регистрация аккаунта
+    +textbox({placeholder: "Имя"})
+    .fam-cntr
+      +textbox({placeholder: "Фамилия"})
+    .sex-cntr
+      +radiogroup({labels: ["Мужчина", "Женщина"]})
+    +textbox({title: "Дата рождения", placeholder: "ДД.ММ.ГГГГ", mask: "date"})
+    +textbox({title: "Данные для входа в сервис", placeholder: "Email"})
+    .pass-cntr
+      +textbox({placeholder: "Пароль"})
+    +toggle({text: "Получать спецпредложения"})
+
+    .butt-cntr
+      +button({type: "pay", text: "Перейти к оплате"})
+    .enter-cntr
+      .caption Уже есть аккаунт на Toxin
+      .butt-ent-cntr
+        +button({type: "bordered", text: "Войти"})
+    

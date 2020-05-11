@@ -1,0 +1,51 @@
+@import "../../common/fonts.scss";
+
+.regacc {
+  padding: 40px 29px 29px 29px;
+  margin: 0 40px 40px 0;
+  width: 380px;
+  background: #fff;
+  
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  .h1 {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+    padding-bottom: 14px;
+  }
+  .fam-cntr {
+    margin-top: -15px;
+  }
+  .sex-cntr {
+    margin-top: -12px;
+    padding-bottom: 22px;
+  }
+  .pass-cntr {
+    margin-top: -15px;
+    margin-bottom: -13px;
+  }
+  .butt-cntr {
+    padding-top: 13px;
+    padding-bottom: 30px;
+  }
+  .enter-cntr {
+    display: flex;
+    .caption {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      
+      @include font-body();
+    }
+    .butt-ent-cntr{
+      display: flex;
+      width: 99px;
+      height: 44px;
+    }
+  }
+}

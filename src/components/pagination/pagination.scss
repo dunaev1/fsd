@@ -1,7 +1,6 @@
 @import "../../common/fonts.scss";
 
 .pagination {
-  display: inline-block;
 
   @include font-body();
   color: var(--c_dark75);
@@ -9,7 +8,7 @@
   .pagebar {
     display: flex;
     justify-content: center;
-
+    flex-flow: wrap;
     font-size: 12px;
     padding-bottom: 10px;
 

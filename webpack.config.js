@@ -70,6 +70,11 @@ const config = {
       template: 'src/pages/form_elements/form_elements.pug',
       inject: false
     }),
+    new HtmlWebpackPlugin({
+      filename: 'pagecards.html',
+      template: 'src/pages/pagecards/pagecards.pug',
+      inject: false
+    }),
   ]
 };
 module.exports = config;

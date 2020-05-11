@@ -1,6 +1,7 @@
 
 body {
   outline: none;
+  text-size-adjust: none;
 }
 
 * {

@@ -1,0 +1,20 @@
+include ../../components/logo/logo
+include ../../cards/findroom/findroom
+include ../../cards/regacc/regacc
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Cards
+    link(rel="stylesheet" type="text/css" href="main.css")    
+  body
+    .page-cards
+      .logo-container
+        +logo
+      .margin
+      .main-container
+        +findroom
+        +regacc
+      .margin
+ 

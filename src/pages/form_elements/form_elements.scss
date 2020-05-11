@@ -22,7 +22,7 @@
     max-width: 1158px;
     width: 100%;
 
-    grid-template-columns: 27.6% 4.7% 27.66% 0% auto;
+    grid-template-columns: 27.6% 4.7% 27.66% 0% 27.66%;
     grid-column-gap: 3.1%;
 
     
@@ -138,7 +138,7 @@
           margin-bottom: 40px;
         }
         .pagination-container {
-          display: flex;
+          display: inline-block;
         }
       }
     }

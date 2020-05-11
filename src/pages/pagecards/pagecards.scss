@@ -1,0 +1,21 @@
+.page-cards {
+  display: flex;
+  padding-top: 150px;
+  background: #e5e5e5;
+
+  .logo-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+  .margin {
+    width: 50%;
+    flex-shrink: 100;
+  }
+
+  .main-container {
+    display: flex;
+    flex-flow: column;
+    width: 1160px;
+  }
+}

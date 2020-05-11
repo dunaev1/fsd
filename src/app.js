@@ -24,8 +24,11 @@ import "./components/facility/facility.scss"
 import "./components/feedback/feedback.scss"
 import "./components/logo/logo.scss"
 
+import "./cards/findroom/findroom.scss"
+import "./cards/regacc/regacc.scss"
 
 import "./pages/colors_types/colors_types.scss"
 import "./pages/form_elements/form_elements.scss"
+import "./pages/pagecards/pagecards.scss"
 
 import './main.css'
