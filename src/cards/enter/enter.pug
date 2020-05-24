@@ -1,0 +1,22 @@
+//-
+
+include ../../components/button/button
+include ../../components/textbox/textbox
+
+mixin enter(opt)
+  -
+  .enter
+    .h1 Войти
+    +textbox({placeholder: "Email"})
+    .pass-cntr
+      +textbox({placeholder: "Пароль"})
+
+    .butt-cntr
+      +button({type: "pay", text: "Войти"})
+    .enter-cntr
+      .caption Нет аккаунта на Toxin?
+      .butt-ent-cntr
+        +button({type: "bordered", text: "Создать"})
+
+
+
