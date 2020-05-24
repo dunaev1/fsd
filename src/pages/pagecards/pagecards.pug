@@ -3,6 +3,7 @@ include ../../cards/findroom/findroom
 include ../../cards/regacc/regacc
 include ../../cards/roomrent/roomrent
 include ../../cards/enter/enter
+include ../../cards/roompreview/roompreview
 
 doctype html
 html(lang="en")
@@ -31,5 +32,9 @@ html(lang="en")
         .column
           .card-cntr
             .picker.datepicker-here(data-range="true" data-startDate="2019-05-05" data)          
+          .card-cntr
+            +roompreview({img: "../../images/888_4x.png", n: 888, islux: true, price: 9990, stars: 5, reviews: 145, isscroll: true})
+          .card-cntr
+            +roompreview({img: "../../images/840_4x.png", n: 840, islux: false, price: 9900, stars: 4, reviews: 65})
       .margin
  

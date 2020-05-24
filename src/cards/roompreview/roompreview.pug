@@ -1,0 +1,63 @@
+//-
+  opt.n         int     roomnumber
+  opt.islux     bool    
+  opt.price     int
+  opt.reviews   int
+  opt.stars     int
+  opt.isscroll  bool
+  opt.img       str     image_url
+  opt.anchor    [x, y]
+
+
+include ../../components/ratebutton/ratebutton
+
+mixin roompreview(opt)
+  -
+    var n = 0, islux = false, price = 0, reviews = 0, stars = 0,
+        isscroll = false, anchor = [0, 0], img
+    if (typeof(opt) == "object") {
+      typeof(opt.n) != "undefined" && (n = opt.n)
+      typeof(opt.islux) != "undefined" && (islux = opt.islux)
+      typeof(opt.price) != "undefined" && (price = opt.price)
+      typeof(opt.reviews) != "undefined" && (reviews = opt.reviews)
+      typeof(opt.stars) != "undefined" && (stars = opt.stars)
+      typeof(opt.isscroll) != "undefined" && (isscroll = opt.isscroll)
+      typeof(opt.img) != "undefined" && (img = opt.img)
+      typeof(opt.anchor) != "undefined" && (anchor = opt.anchor)
+    }
+    var stprice = String(price), stsprice = ""
+    var i
+    stsprice = stprice.substr(0, stprice.length % 3)
+    for( i = 0; i < Math.floor(stprice.length / 3); i++)
+      stsprice += " " + stprice.substr(stprice.length % 3 + i * 3, 3)
+  .roompreview
+    .image-cntr(style="background-image: url(${require('" + img + "')}")
+      if isscroll
+        .control-layer
+          .left
+          .mid
+          .right
+        .shadow-layer
+          .left
+          .mid
+          .right
+      .scrollbar-layer
+        .circle-filled
+        .circle
+        .circle
+        .circle
+    .desc-row
+      span.n= "№ "
+      span.number= n + " "  
+      if islux
+        span.lux-sign ЛЮКС
+
+      span.price= stsprice + "₽ "
+        em.per-period в сутки
+    .separator
+    .reviews
+      +ratebutton({stars: stars})
+      .rev
+        b= reviews
+        =" Отзывов"
+      

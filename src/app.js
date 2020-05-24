@@ -28,6 +28,7 @@ import "./cards/findroom/findroom.scss"
 import "./cards/regacc/regacc.scss"
 import "./cards/roomrent/roomrent.scss"
 import "./cards/enter/enter.scss"
+import "./cards/roompreview/roompreview.scss"
 
 import "./pages/colors_types/colors_types.scss"
 import "./pages/form_elements/form_elements.scss"
