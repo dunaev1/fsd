@@ -1567,10 +1567,12 @@
 
             return this._getDayNamesHtml(firstDay, ++curDay, html, ++i);
         },
+        // realy dirty
+        _dirtyToday : new Date(),
 
         _getCellContents: function (date, type) {
             var classes = "datepicker--cell datepicker--cell-" + type,
-                currentDate = new Date(),
+                currentDate = this._dirtyToday,
                 parent = this.d,
                 minRange = dp.resetTime(parent.minRange),
                 maxRange = dp.resetTime(parent.maxRange),

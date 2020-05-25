@@ -4,6 +4,7 @@ include ../../cards/regacc/regacc
 include ../../cards/roomrent/roomrent
 include ../../cards/enter/enter
 include ../../cards/roompreview/roompreview
+include ../../cards/calendar/calendar
 
 doctype html
 html(lang="en")
@@ -31,7 +32,7 @@ html(lang="en")
             +enter
         .column
           .card-cntr
-            .picker.datepicker-here(data-range="true" data-startDate="2019-05-05" data)          
+            +calendar
           .card-cntr
             +roompreview({img: "../../images/888_4x.png", n: 888, islux: true, price: 9990, stars: 5, reviews: 145, isscroll: true})
           .card-cntr
