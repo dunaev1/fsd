@@ -1,0 +1,19 @@
+.headers-footers {
+  padding-top: 150px;
+  background: #f4f4f6;
+
+  .logo-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+
+  .margin {
+    width: 0%;
+		flex-grow: 1;
+  }
+  
+  .hf-cntr {
+    margin-bottom: 40px;
+  }
+}

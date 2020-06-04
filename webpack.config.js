@@ -75,6 +75,11 @@ const config = {
       template: 'src/pages/pagecards/pagecards.pug',
       inject: false
     }),
+    new HtmlWebpackPlugin({
+      filename: 'headers_footers.html',
+      template: 'src/pages/headers_footers/header_footers.pug',
+      inject: false
+    }),
   ]
 };
 module.exports = config;

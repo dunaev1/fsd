@@ -1,0 +1,55 @@
+//-
+  
+  opt.login_as      str
+  opt.menu_list     [{text: str, expandable: bool (false), is_active: bool (false), 
+                      add_space: bool (false)}, ...]
+
+include ../../components/button/button
+
+mixin header(opt)
+  -
+    var login_as = "", menu_list = []
+    if(typeof(opt) != "undefined") {
+      typeof(opt.login_as) != "undefined" && (login_as = opt.login_as)
+      typeof(opt.menu_list) != "undefined" && (menu_list = opt.menu_list)
+    }
+
+  .header
+    .margin
+    .main-cntr
+      +logo({type: 1})
+      .spacer
+      each item in menu_list
+        if item.expandable
+          +_expandable(item.text)
+        else
+          +_link(item.text, item.is_active)
+        if item.add_space
+          .link-spacer
+      if login_as == ""
+        .login-button
+          +button({text: "Login", type: "bordered"})
+        .reg-button
+          +button({text: "Register", type: "filled"})
+      else
+        .separator
+        .login= login_as
+        
+    .margin
+
+
+mixin _link(caption, current = false)
+  -
+    var url = "#"
+  if current
+    .link-active= caption
+  else
+    a.link(href= url)= caption
+
+mixin _expandable(caption)
+  -
+    var url = "#"
+  a.dd-list(href= url)
+    .link= caption
+    .ico
+  

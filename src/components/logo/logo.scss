@@ -1,6 +1,7 @@
 .logo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
 
   .pic {
     background-image: url("./images/grey_logo.svg");
@@ -9,15 +10,16 @@
   }
 
   .pic-color {
-    //background-image: url("./images/color_logo.svg");
+    background-image: url("./images/color_logo.svg");
     width: 40px;
     height: 40px;
   }
 
   .toxin {
-    padding-left: 12px;
-    //background-image: "./images/toxin_logo.svg";
+    margin-left: 12px;
+    background-image: url("./images/toxin_logo.svg");
     width: 54px;
+    min-width: 54px;
     height: 14px;
   }
 }

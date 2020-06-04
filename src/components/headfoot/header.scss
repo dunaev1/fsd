@@ -1,0 +1,84 @@
+.header {
+  display: flex;
+  height: 70px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 10px 20px var(--c_dark05);
+
+  .margin {
+    flex-grow: 1;
+  }
+
+  .main-cntr {
+    display: flex;
+    width: 1160px;
+    align-items: center;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13.8px;
+    line-height: 17px;
+    color: var(--c_dark50);
+
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+  .link {
+    margin-right: 20px;
+    color: var(--c_dark50);
+  }
+  .link-active {
+    font-weight: bold;
+    margin-right: 20px;
+    color: var(--c_dark75);
+  }
+  .link-spacer {
+    width: 10px;
+  }
+  .dd-list {
+    margin-right: 20px;
+    .link {
+      display: inline-block;
+      margin: 0;
+    }
+    .ico {
+      display: inline-block;
+      background-image: url("./images/expand_more.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 24px;
+      height: 21px;
+      vertical-align: middle;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    opacity: 0.5;
+  }
+
+  .reg-button {
+    width: 101px;
+    height: 34px;
+  }
+  .login-button {
+    width: 79px;
+    height: 34px;
+    margin-right: 20px;
+  }
+  .separator {
+    width: 1px;
+    height: 30px;
+    background: var(--c_dark10);
+  }
+
+  .login {
+    font-size: 14px;
+    padding-left: 31px;
+  }
+}

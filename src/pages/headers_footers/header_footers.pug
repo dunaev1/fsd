@@ -1,0 +1,45 @@
+include ../../components/logo/logo
+include ../../components/headfoot/header
+include ../../components/headfoot/footer_eng
+include ../../components/headfoot/footer_unuse
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Headers & Footers
+    link(rel="stylesheet" type="text/css" href="main.css")    
+    script(src="jquery.min.js")
+    script(src="main.bundle.js")
+  body
+    .headers-footers
+      .logo-container
+        +logo
+      .hf-cntr
+        +header({menu_list: [
+                {text: "Home", is_active: true, add_space: true},
+                {text: "About Us", add_space: true},
+                {text: "Services", expandable: true},
+                {text: "Careers", add_space: true},
+                {text: "News", add_space: true},
+                {text: "Documentation", add_space: true},
+                ]})
+      .hf-cntr
+        +header({login_as: "Cosmin Negoita",
+                menu_list: [
+                {text: "Home", is_active: true, add_space: true},
+                {text: "About Us", add_space: true},
+                {text: "Services", expandable: true},
+                {text: "Careers", add_space: true},
+                {text: "News", add_space: true},
+                {text: "Documentation", add_space: true},
+                ]})
+      .hf-cntr
+        +footer_eng
+      .hf-cntr
+        +footer_unuse
+      
+      .margin
+      .main-container
+      .margin
+ 

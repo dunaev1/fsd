@@ -1,0 +1,62 @@
+//-
+  
+include ../../components/textbox/textbox
+
+mixin footer_eng(opt)
+  -
+    var a
+
+  .footer
+    .top-cntr
+      .margin
+      .top-center-cntr
+        .column-desc
+          +logo({type: 1})
+          .desc
+            | Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+
+        .column-nav
+          .h3
+            | Navigation
+          +_link_ft("About Us")
+          +_link_ft("News")
+          +_link_ft("Support")
+          +_link_ft("Products")
+
+        .column-nav
+          .h3 
+            | About Us
+          +_link_ft("Who we are")
+          +_link_ft("Our team")
+          +_link_ft("Careers")
+          +_link_ft("Investors")
+
+        .column-nav
+          .h3
+            | Support
+          +_link_ft("Documentation")
+          +_link_ft("Community")
+          +_link_ft("Get in Touch")
+
+        .column-desc
+          .h3 Subscribe to our newsletter
+          .desc-r
+            | Receive our latest news and promotions in your inbox!
+          +textbox({placeholder: "Your email address", button_url: "#"})
+      .margin
+    .line
+    .bottom-cntr
+      .margin
+      .bottom-center-cntr
+        .copyright
+          | Copyright © 2018 Toxin UI Kit. All rights reserved.
+        a.twit
+        a.face
+        a.insta
+      .margin
+
+mixin _link_ft(caption)
+  -
+    var url = "#"
+  a.link(href= url)= caption
+

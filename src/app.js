@@ -24,6 +24,9 @@ import "./components/bulletlist/bulletlist.scss"
 import "./components/facility/facility.scss"
 import "./components/feedback/feedback.scss"
 import "./components/logo/logo.scss"
+import "./components/headfoot/header.scss"
+import "./components/headfoot/footer.scss"
+import "./components/headfoot/footer_unuse.scss"
 
 import "./cards/findroom/findroom.scss"
 import "./cards/regacc/regacc.scss"
@@ -35,5 +38,6 @@ import "./cards/calendar/calendar.scss"
 import "./pages/colors_types/colors_types.scss"
 import "./pages/form_elements/form_elements.scss"
 import "./pages/pagecards/pagecards.scss"
+import "./pages/headers_footers/header_footers.scss"
 
 import './main.css'
