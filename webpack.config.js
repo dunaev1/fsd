@@ -85,6 +85,16 @@ const config = {
       template: 'src/pages/landing/langing.pug',
       inject: false
     }),
+    new HtmlWebpackPlugin({
+      filename: 'registration.html',
+      template: 'src/pages/regsign/register.pug',
+      inject: false
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'signin.html',
+      template: 'src/pages/regsign/signin.pug',
+      inject: false
+    }),
   ]
 };
 module.exports = config;

@@ -40,5 +40,6 @@ import "./pages/form_elements/form_elements.scss"
 import "./pages/pagecards/pagecards.scss"
 import "./pages/headers_footers/header_footers.scss"
 import "./pages/landing/langing.scss"
+import "./pages/regsign/regsign.scss"
 
 import './main.css'
