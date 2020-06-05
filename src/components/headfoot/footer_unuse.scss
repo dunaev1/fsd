@@ -27,6 +27,10 @@
     margin: 0 auto;
     width: fit-content;
   }
+  
+  a:hover {
+    opacity: 0.5;
+  }
 
   .twit {
     display: inline-block;

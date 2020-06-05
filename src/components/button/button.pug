@@ -1,23 +1,28 @@
 //-
-  options.type      {"text", "text-default", "bordered", "filled", "pay"}
+  options.type            {"text", "text-default", "bordered", "filled", "pay"}
   options.text
   options.url       
-  options.classes     str // additional classes
-  options.ishover   bool
+  options.classes         str // additional classes
+  options.ishover         bool
+  options.content_width   bool
 include ./ico_arrow
 
 mixin button(options)
   -
-    var type = "text", text = "Ok", url = false, classes = "", ishover = false;
+    var type = "text", text = "Ok", url = false, classes = "", ishover = false
+    var content_width = false
     if(typeof(options) != "undefined") {
       typeof(options.type) != "undefined" && (type = options.type)
       typeof(options.text) != "undefined" && (text = options.text)
-      typeof(options.url) != "undefined" && (url = options.url);
-      typeof(options.classes) != "undefined" && (classes = options.classes);
-      typeof(options.ishover) != "undefined" && (ishover = options.ishover);
+      typeof(options.url) != "undefined" && (url = options.url)
+      typeof(options.classes) != "undefined" && (classes = options.classes)
+      typeof(options.ishover) != "undefined" && (ishover = options.ishover)
+      typeof(options.content_width) != "undefined" && (content_width = options.content_width)
     }
     if (ishover)
       classes += " hovered"
+    if (content_width) 
+      classes += " button-content-width"
   case type
     when "bordered"
       a.button-bordered(tabindex="0" class= classes href= url)= text

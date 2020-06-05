@@ -1,0 +1,26 @@
+include ../../components/headfoot/header_rus
+include ../../components/headfoot/footer_rus
+include ../../cards/findroom/findroom
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Landing page
+    link(rel="stylesheet" type="text/css" href="main.css")    
+    script(src="jquery.min.js")
+    script(src="main.bundle.js")
+
+    .landing-page
+      +header_rus
+      .main-cntr
+        .margin
+        .content
+          .card-cntr
+            +findroom
+          .desc
+            | Лучшие номера для вашей работы,
+            br
+            | отдыха и просто вдохновения
+        .margin
+      +footer_rus

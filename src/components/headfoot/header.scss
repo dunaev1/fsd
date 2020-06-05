@@ -1,4 +1,4 @@
-.header {
+.headers {
   display: flex;
   height: 70px;
   width: 100%;
@@ -17,7 +17,7 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
-    font-size: 13.8px;
+    font-size: 14px;
     line-height: 17px;
     color: var(--c_dark50);
 
@@ -36,7 +36,7 @@
     color: var(--c_dark75);
   }
   .link-spacer {
-    width: 10px;
+    width: 8.7px;
   }
   .dd-list {
     margin-right: 20px;
@@ -63,11 +63,9 @@
   }
 
   .reg-button {
-    width: 101px;
     height: 34px;
   }
   .login-button {
-    width: 79px;
     height: 34px;
     margin-right: 20px;
   }

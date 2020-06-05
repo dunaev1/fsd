@@ -3,18 +3,23 @@
   opt.login_as      str
   opt.menu_list     [{text: str, expandable: bool (false), is_active: bool (false), 
                       add_space: bool (false)}, ...]
+  opt.login_capt    str
+  opt.reg_capt      str
 
 include ../../components/button/button
+include ../../components/logo/logo
 
 mixin header(opt)
   -
-    var login_as = "", menu_list = []
+    var login_as = "", menu_list = [], login_capt, reg_capt
     if(typeof(opt) != "undefined") {
       typeof(opt.login_as) != "undefined" && (login_as = opt.login_as)
       typeof(opt.menu_list) != "undefined" && (menu_list = opt.menu_list)
+      typeof(opt.login_capt) != "undefined" && (login_capt = opt.login_capt)
+      typeof(opt.reg_capt) != "undefined" && (reg_capt = opt.reg_capt)
     }
 
-  .header
+  .headers
     .margin
     .main-cntr
       +logo({type: 1})
@@ -28,9 +33,9 @@ mixin header(opt)
           .link-spacer
       if login_as == ""
         .login-button
-          +button({text: "Login", type: "bordered"})
+          +button({text: login_capt, type: "bordered", content_width: true})
         .reg-button
-          +button({text: "Register", type: "filled"})
+          +button({text: reg_capt, type: "filled", content_width: true})
       else
         .separator
         .login= login_as

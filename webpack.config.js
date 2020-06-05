@@ -80,6 +80,11 @@ const config = {
       template: 'src/pages/headers_footers/header_footers.pug',
       inject: false
     }),
+    new HtmlWebpackPlugin({
+      filename: 'landing_page.html',
+      template: 'src/pages/landing/langing.pug',
+      inject: false
+    }),
   ]
 };
 module.exports = config;

@@ -1,0 +1,36 @@
+.landing-page {
+  
+  >.main-cntr {
+    display: flex;
+
+    background-image: url(./images/landing.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: -70px;
+    height: 830px;
+  }
+
+  .margin {
+    flex-grow: 1;
+  }
+  
+  .content {
+    position: relative;
+    padding-top: 70px;
+    width: 1160px;
+
+    .desc {
+      position: absolute;
+      right: -6px;
+      bottom: 20px;
+
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: right; 
+      color: var(--c_dark75);
+    }
+  }
+}

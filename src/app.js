@@ -39,5 +39,6 @@ import "./pages/colors_types/colors_types.scss"
 import "./pages/form_elements/form_elements.scss"
 import "./pages/pagecards/pagecards.scss"
 import "./pages/headers_footers/header_footers.scss"
+import "./pages/landing/langing.scss"
 
 import './main.css'
