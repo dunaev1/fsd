@@ -1,0 +1,44 @@
+include ../../components/headfoot/header_rus
+include ../../components/headfoot/footer_rus
+include ../../components/datedropdown/datedropdown
+include ../../components/dropdown/dropdown
+include ../../components/checkbox/checkbox
+include ../../components/checkboxlist/checkboxlist
+
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Search room
+    link(rel="stylesheet" type="text/css" href="main.css")    
+    script(src="jquery.min.js")
+    script(src="main.bundle.js")
+  body
+    .search-room
+      +header_rus
+      .main-cntr
+        .margin
+        .content
+          .option-panel
+            .control-cntr
+              +datedropdown({dates: ["2018.08.19", "2018.08.23"], captions: ["Даты пребывания в отеле", ""]})              
+              +dropdown({type: "guests", custom_title: "Гости",  buttons_footer: true, values: [2, 1, 1]})
+              .slider-cntr
+              .checkbox-buttons
+                .h3= "Checkbox buttons"
+                +checkbox({text: "Можно курить"})
+                +checkbox({text: "Можно с питомцами", checked: true})
+                +checkbox({text: "Можно пригласить гостей\n(до 10 человек)", checked: true})
+              .rich-container
+                .h3= "Доступность"
+                +checkbox({text: "Широкий коридор\nШирина коридоров в номере\nне менее 91 см.", isrich: true})
+                +checkbox({text: "Помощник для инвалидов\nНа 1 этаже вас встретит специалист\nи проводит до номера.", isrich: true})
+              .facil-cntr
+                +dropdown({type: "rooms", custom_title: "Удобства номера", buttons_footer: false, values: [2, 2, 1]})
+              +checkboxlist({title: "Дополнительные удобства", expanded: false, content:
+                             [["Завтрак", false], ["Письменный стол", true], ["Стул для кормления", true], 
+                              ["Кроватка", true], ["Телевизор", false], ["Шампунь", false]]})          
+          .roomcards-cntr
+        .margin
+      +footer_rus

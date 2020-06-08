@@ -9,7 +9,7 @@
     flex-grow: 1;
   }
 
-  .main-cntr {
+  >.main-cntr {
     display: flex;
     width: 1160px;
     align-items: center;
@@ -18,7 +18,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 22px;
     color: var(--c_dark50);
 
   }

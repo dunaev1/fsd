@@ -95,6 +95,11 @@ const config = {
       template: 'src/pages/regsign/signin.pug',
       inject: false
     }),
+    new HtmlWebpackPlugin({
+      filename: 'search_room.html',
+      template: 'src/pages/search_room/search_room.pug',
+      inject: false
+    }),
   ]
 };
 module.exports = config;

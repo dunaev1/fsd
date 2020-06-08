@@ -41,5 +41,6 @@ import "./pages/pagecards/pagecards.scss"
 import "./pages/headers_footers/header_footers.scss"
 import "./pages/landing/langing.scss"
 import "./pages/regsign/regsign.scss"
+import "./pages/search_room/search_room.scss"
 
 import './main.css'

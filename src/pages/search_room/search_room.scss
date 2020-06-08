@@ -1,0 +1,51 @@
+@import "../../common/fonts.scss";
+
+.search-room {
+
+  .h3 {
+    @include font-h3();
+    padding-bottom: 16px;
+    color: var(--c_dark100);
+  }
+  >.main-cntr {
+    display: flex;
+    padding-top: 30px;
+
+    >.margin {
+      width: 0%;
+      flex-grow: 1;
+    }
+    >.content {
+      display: flex;
+      width: 1160px;
+
+      >.option-panel {
+        width: 28.1%;
+        >.control-cntr {
+          width: 266px;
+          >.slider-cntr {
+            height: 112px;
+          }
+          >.checkbox-buttons {
+            padding-bottom: 19px;
+            .h3 {
+              padding-bottom: 18px;
+            }
+          }
+          >.rich-container {
+            padding-bottom: 19px;
+            .h3 {
+              padding-bottom: 17px;
+            }
+          }
+          >.facil-cntr {
+            margin-bottom: -5px;
+          }
+
+          
+        }
+      }
+    }
+  }
+  
+}

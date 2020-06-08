@@ -89,7 +89,10 @@ function apply_dd(element /*dropdown*/) {
   var type = getType(element), val
   var arr  = getQuantityArray(element)
   var sum = arr[0] + arr[1] + arr[2]
-  if(type == "guests") val = sum ? sum + " гостя" : ""
+  if(type == "guests") {
+    val = (sum ? arr[0] + arr[1] + " гостя" : "") + 
+          (arr[2] ? ", " + arr[2] + " младенец" : "")
+  }
   else if(type == "rooms") val = arr[0] + " спальни, " + arr[1] + " кровати..." // + arr[2] + " туалeта"
   input.value = val  
 }
