@@ -3,8 +3,6 @@
 .search-room {
 
   .h3 {
-    @include font-h3();
-    padding-bottom: 16px;
     color: var(--c_dark100);
   }
   >.main-cntr {
@@ -20,32 +18,67 @@
       width: 1160px;
 
       >.option-panel {
-        width: 28.1%;
+        width: 26.9%;
         >.control-cntr {
-          width: 266px;
+          max-width: 266px;
           >.slider-cntr {
             height: 112px;
           }
           >.checkbox-buttons {
             padding-bottom: 19px;
-            .h3 {
+            >.h3 {
+              @include font-h3();
               padding-bottom: 18px;
             }
           }
           >.rich-container {
             padding-bottom: 19px;
-            .h3 {
+            >.h3 {
+              @include font-h3();
               padding-bottom: 17px;
             }
           }
           >.facil-cntr {
             margin-bottom: -5px;
-          }
+          }   
+        }
+      }
 
-          
+      >.roomcard-cntr {
+        width: 73.1%;
+        >.rc-header {
+          font-family: Opensans;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 30px;
+          padding-bottom: 20px;
+          padding-left: 14px;
+          color: var(--c_dark100);
+        }
+        >.rc-content {
+          display: flex;
+          flex-flow: wrap;
+          justify-content: center;
+          margin-right: -12px;
+          padding-bottom: 20px;
+          >.card-cntr {
+            margin-bottom: 21px;
+            margin-left: 7px;
+            margin-right: 5px;
+          }
+        }
+        >.rc-footer {
+          margin: 0;
+          width: 100%;
+          padding-bottom: 70px;
         }
       }
     }
   }
-  
+  >.bottom-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--c_dark50);
+  }
 }

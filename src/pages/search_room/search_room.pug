@@ -4,7 +4,8 @@ include ../../components/datedropdown/datedropdown
 include ../../components/dropdown/dropdown
 include ../../components/checkbox/checkbox
 include ../../components/checkboxlist/checkboxlist
-
+include ../../components/pagination/pagination
+include ../../cards/roompreview/roompreview
 
 doctype html
 html(lang="en")
@@ -39,6 +40,36 @@ html(lang="en")
               +checkboxlist({title: "Дополнительные удобства", expanded: false, content:
                              [["Завтрак", false], ["Письменный стол", true], ["Стул для кормления", true], 
                               ["Кроватка", true], ["Телевизор", false], ["Шампунь", false]]})          
-          .roomcards-cntr
+          .roomcard-cntr
+            .rc-header
+              | Номера, которые мы для вас подобрали
+            .rc-content
+              .card-cntr
+                +roompreview({img: "../../images/888_4x.png", n: 888, islux: true, price: 9990, stars: 5, reviews: 145, isscroll: true})
+              .card-cntr
+                +roompreview({img: "../../images/840_4x.png", n: 840, islux: false, price: 9900, stars: 4, reviews: 65})
+              .card-cntr
+                +roompreview({img: "../../images/980_4x.png", n: 980, islux: true, price: 8500, stars: 3, reviews: 35})
+              .card-cntr
+                +roompreview({img: "../../images/856_4x.png", n: 856, price: 7300, stars: 5, reviews: 19})
+              .card-cntr
+                +roompreview({img: "../../images/740_4x.png", n: 740, price: 6000, stars: 4, reviews: 44})
+              .card-cntr
+                +roompreview({img: "../../images/982_4x.png", n: 982, price: 5800, stars: 3, reviews: 56})
+              .card-cntr
+                +roompreview({img: "../../images/678_4x.png", n: 678, price: 5500, stars: 5, reviews: 45})
+              .card-cntr
+                +roompreview({img: "../../images/450_4x.png", n: 450, price: 5300, stars: 4, reviews: 39})
+              .card-cntr
+                +roompreview({img: "../../images/350_4x.png", n: 350, price: 5000, stars: 3, reviews: 77})
+              .card-cntr
+                +roompreview({img: "../../images/666_4x.png", n: 666, price: 5000, stars: 5, reviews: 25})
+              .card-cntr
+                +roompreview({img: "../../images/444_4x.png", n: 444, price: 5000, stars: 3, reviews: 15})
+              .card-cntr
+                +roompreview({img: "../../images/352_4x.png", n: 352, price: 5000, stars: 3, reviews: 55})
+            .rc-footer
+              +pagination
         .margin
+      .bottom-line
       +footer_rus
