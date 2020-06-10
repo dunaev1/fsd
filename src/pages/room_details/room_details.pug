@@ -1,0 +1,74 @@
+include ../../components/headfoot/header_rus
+include ../../components/headfoot/footer_rus
+include ../../components/facility/facility
+include ../../components/feedback/feedback
+include ../../components/bulletlist/bulletlist
+
+include ../../cards/roomrent/roomrent
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Room details
+    link(rel="stylesheet" type="text/css" href="main.css")    
+    script(src="jquery.min.js")
+    script(src="main.bundle.js")
+  body
+    .room-details
+      +header_rus
+      .pic-cntr
+        .pic1
+        .pic-column
+          .pic2
+          .pic3
+      .main-cntr
+        .margin
+        .content
+          .left-cntr
+            .halfing-cntr
+              .v1
+                .h1
+                  | Сведения о номере
+                .facility-cntr
+                  +facility({pic: 0, header: "комфорт", body: "Шумопоглощающие стены"})
+                  +facility({pic: 1, header: "удобство", body: "Окно в каждой из спален"})
+                  +facility({pic: 2, header: "уют", body: "Номер оснащён камином", underline: false})
+              .v2
+                .h1
+                  | Впечатления от номера
+            .review-title-cntr
+              .h1
+                | Отзывы посетителей номера
+              .reviews
+                | 2 отзыва
+            .review-cntr
+              +feedback({img: "../../images/murat.png", scale: 200, anch: [-22, -12], name: "Мурад Сарафанов", 
+                        time: "5 дней назад", likes: 12, isliked: true, text: "Великолепный матрас на \
+                        кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, \
+                        шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+                      })
+            .review-cntr
+              +feedback({img: "../../images/patris.png", scale: 200, anch: [-22, -12], name: "Патрисия Стёклышкова", 
+                        time: "неделю назад", likes: 2, isliked: false, text: "Обслуживание на высоте! \
+                        Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо \
+                        и десерт как комплимент"
+                      })
+            .rules-cntr
+              .halfing-cntr
+                .v1
+                  .h1
+                    | Правила
+                  .rules-content
+                    +bulletlist({list: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, a выезд до 12:00"]})
+                .v2
+                  .h1
+                    | Отмена
+                  .cancel-cntr
+                    | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн.
+                    | до прибытия вы получите полный возврат за вычетом сбора за услуги.
+          .card-cntr
+            +roomrent
+        .margin
+      .bottom-line
+      +footer_rus

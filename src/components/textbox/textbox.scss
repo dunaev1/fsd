@@ -27,11 +27,12 @@
     font-size: 13.6px;
     color: var(--c_dark75);
     padding: 12px 14px 12px 13px;
-    width: 100%;
+    width: 0;
     border: unset;
     border-radius: 4px;
     outline: none;
     margin: 1px;
+    flex-grow: 1;
   }
 
   .tb-cntr:hover, .tb-cntr:focus-within, .hovered {

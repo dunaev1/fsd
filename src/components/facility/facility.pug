@@ -1,19 +1,21 @@
 //-
-  opt.pic       int
-  opt.header    str
-  opt.body      str
+  opt.pic             int
+  opt.header          str
+  opt.body            str
+  opt.underline       bool (true)
 
 include ./ico_facil.pug
 
 mixin facility(opt)
   -
-    var pic = 0, header = "header", body = "body"
+    var pic = 0, header = "header", body = "body", underline = true
     if (typeof(opt) != "undefined") {
       typeof(opt.pic) != "undefined" && (pic = opt.pic)
       typeof(opt.header) != "undefined" && (header = opt.header)
       typeof(opt.body) != "undefined" && (body = opt.body)
+      typeof(opt.underline) != "undefined" && (underline = opt.underline)
     }
-  .facility
+  .facility(style= !underline ? "border-bottom: none" : "")
     .pic
       case pic
         when 1

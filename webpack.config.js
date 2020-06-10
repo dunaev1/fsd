@@ -100,6 +100,11 @@ const config = {
       template: 'src/pages/search_room/search_room.pug',
       inject: false
     }),
+    new HtmlWebpackPlugin({
+      filename: 'room_details.html',
+      template: 'src/pages/room_details/room_details.pug',
+      inject: false
+    }),
   ]
 };
 module.exports = config;
