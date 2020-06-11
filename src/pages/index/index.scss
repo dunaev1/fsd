@@ -1,0 +1,21 @@
+.index-page {
+  
+  >.main-cntr {
+    display: flex;
+  }
+
+  .margin {
+    flex-grow: 1;
+  }
+  
+  .content {
+    position: relative;
+    padding-top: 70px;
+    width: 1160px;
+    
+    >.btn-cntr {
+      height: 40px;
+      padding-bottom: 10px;
+    }
+  }
+}

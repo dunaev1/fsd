@@ -1,0 +1,38 @@
+include ../../components/headfoot/header_rus
+include ../../components/headfoot/footer_rus
+include ../../components/button/button
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Pages
+    link(rel="stylesheet" type="text/css" href="main.css")    
+    script(src="jquery.min.js")
+    script(src="main.bundle.js")
+  body
+    .index-page
+      +header_rus
+      .main-cntr
+        .margin
+        .content
+          .btn-cntr
+            +button({type: "bordered", text: "Colors & Types", url: "./colors_types.html"})
+          .btn-cntr
+            +button({type: "bordered", text: "Form elements", url: "./form_elements.html"})
+          .btn-cntr
+            +button({type: "bordered", text: "Cards", url: "./pagecards.html"})
+          .btn-cntr
+            +button({type: "bordered", text: "Headers & footers", url: "./headers_footers.html"})
+          .btn-cntr
+            +button({type: "bordered", text: "Langing page", url: "./landing_page.html"})
+          .btn-cntr
+            +button({type: "bordered", text: "Search room", url: "./search_room.html"})
+          .btn-cntr
+            +button({type: "bordered", text: "Room details", url: "./room_details.html"})
+          .btn-cntr
+            +button({type: "bordered", text: "Registration", url: "./registration.html"})
+          .btn-cntr
+            +button({type: "bordered", text: "Sign in", url: "./signin.html"})
+        .margin
+      +footer_rus

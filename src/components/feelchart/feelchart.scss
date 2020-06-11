@@ -1,0 +1,102 @@
+.feelchart {
+  display: flex;
+  flex-flow: wrap;
+  align-items: flex-end;
+  padding-bottom: 60px;
+
+  >.chart-cntr {
+    position: relative;
+    width: 120px;
+    height: 121px;
+
+    color: var(--c_purple);
+    >.chart {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120px;
+      height: 121px;
+      background-image: url(./images/pie.svg);
+      background-repeat: no-repeat;
+       
+    }
+    >.votes {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+
+      >span {
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 26px;
+      }
+      >em {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 19px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  >.legend {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--c_dark75);
+    padding-top: 20px;
+    >ul {
+      margin: 0;
+      list-style: none;
+      padding-left: 25px;
+      >li {
+        position: relative;
+        padding: 4px 0px 0px 20px;
+        >.ex {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          top: 9px;
+          left: 5px;
+          border-radius: 5px;
+          background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
+        }
+        >.go {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          top: 9px;
+          left: 5px;
+          border-radius: 5px;
+          background: linear-gradient(180deg, var(--c_green) 0%, var(--c_green_grad) 100%);
+        }
+        >.no {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          top: 9px;
+          left: 5px;
+          border-radius: 5px;
+          background: linear-gradient(180deg, var(--c_purple) 0%, var(--c_purple_grad) 100%);
+        }
+        >.ba {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          top: 9px;
+          left: 5px;
+          border-radius: 5px;
+          background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+        }
+      }
+    }
+  }
+}
+

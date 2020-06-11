@@ -1,0 +1,35 @@
+
+//-
+  opt.votes     int
+
+mixin feelchart(opt)
+  -
+    var votes = 260
+    if (typeof(opt) == "object") {
+      typeof(opt.votes) != "undefined" && (votes = opt.votes)
+    }
+  .feelchart
+    .chart-cntr
+      .chart
+      .votes
+        span= votes
+        em 
+          | голосов
+    .legend
+      ul
+        li
+          .ex
+          | Великолепно
+        li
+          .go
+          | Хорошо
+        li
+          .no
+          | Удовлетворительно
+        li
+          .ba
+          | Разочарован
+      
+        
+      
+

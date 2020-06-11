@@ -105,6 +105,11 @@ const config = {
       template: 'src/pages/room_details/room_details.pug',
       inject: false
     }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'src/pages/index/index.pug',
+      inject: false
+    }),
   ]
 };
 module.exports = config;

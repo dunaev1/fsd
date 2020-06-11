@@ -27,6 +27,7 @@ import "./components/logo/logo.scss"
 import "./components/headfoot/header.scss"
 import "./components/headfoot/footer.scss"
 import "./components/headfoot/footer_unuse.scss"
+import "./components/feelchart/feelchart.scss"
 
 import "./cards/findroom/findroom.scss"
 import "./cards/regacc/regacc.scss"
@@ -43,5 +44,6 @@ import "./pages/landing/langing.scss"
 import "./pages/regsign/regsign.scss"
 import "./pages/search_room/search_room.scss"
 import "./pages/room_details/room_details.scss"
+import "./pages/index/index.scss"
 
 import './main.css'
